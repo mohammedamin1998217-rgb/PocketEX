@@ -1,0 +1,3065 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover, shrink-to-fit=yes">
+    <title>Pocket24 · منصة تداول العقود الآجلة والفوركس</title>
+
+    <meta name="application-name" content="Pocket24">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Pocket24">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="theme-color" content="#0f172a">
+    <meta name="description" content="منصة تداول العقود الآجلة والفوركس باحترافية - Pocket24">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+
+    <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='192' height='192' viewBox='0 0 192 192'><rect width='192' height='192' rx='40' fill='%230f172a'/><text x='96' y='120' font-family='Arial' font-size='90' font-weight='bold' fill='%233b82f6' text-anchor='middle'>P</text><text x='96' y='155' font-family='Arial' font-size='28' font-weight='bold' fill='%233b82f6' text-anchor='middle'>24</text></svg>">
+    <link rel="apple-touch-icon" sizes="152x152" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='152' height='152' viewBox='0 0 152 152'><rect width='152' height='152' rx='32' fill='%230f172a'/><text x='76' y='95' font-family='Arial' font-size='72' font-weight='bold' fill='%233b82f6' text-anchor='middle'>P</text><text x='76' y='122' font-family='Arial' font-size='22' font-weight='bold' fill='%233b82f6' text-anchor='middle'>24</text></svg>">
+    <link rel="apple-touch-icon" sizes="180x180" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='180' height='180' viewBox='0 0 180 180'><rect width='180' height='180' rx='38' fill='%230f172a'/><text x='90' y='112' font-family='Arial' font-size='84' font-weight='bold' fill='%233b82f6' text-anchor='middle'>P</text><text x='90' y='145' font-family='Arial' font-size='26' font-weight='bold' fill='%233b82f6' text-anchor='middle'>24</text></svg>">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js">
+    </script>
+    <style>
+        :root {
+            --bg-primary: #ffffff;
+            --bg-secondary: #f8fafc;
+            --bg-tertiary: #f0f2f5;
+            --text-primary: #0f172a;
+            --text-secondary: #1e293b;
+            --text-muted: #64748b;
+            --border-color: #e2e8f0;
+            --card-bg: #ffffff;
+            --card-shadow: 0 2px 16px rgba(0, 0, 0, 0.06);
+            --blue-light: #eff6ff;
+            --blue-border: #bfdbfe;
+            --input-bg: #f8fafc;
+            --modal-overlay: rgba(15, 23, 42, 0.6);
+            --toast-bg: #1e293b;
+            --navbar-bg: rgba(255, 255, 255, 0.92);
+            --welcome-gradient: linear-gradient(135deg, #eff6ff 0%, #ffffff 50%, #e8f0fe 100%);
+            --hover-light: #f1f5f9;
+            --stat-bg: #f8fafc;
+            --ticker-bg: #eff6ff;
+            --vip-hot-glow: rgba(249, 115, 22, 0.25);
+            --vip-hot-border: #f97316;
+            --vip-hot-bg: #fff7ed;
+            --vip-gold: #f59e0b;
+            --install-banner-bg: #eff6ff;
+            --safe-bottom: env(safe-area-inset-bottom, 16px);
+            --safe-top: env(safe-area-inset-top, 0px);
+            --tab-bar-height: 72px;
+            --spring-transition: cubic-bezier(0.34, 1.56, 0.64, 1);
+            --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+            --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+        }
+
+        .dark-mode {
+            --bg-primary: #0f172a;
+            --bg-secondary: #1a2332;
+            --bg-tertiary: #0f172a;
+            --text-primary: #f1f5f9;
+            --text-secondary: #e2e8f0;
+            --text-muted: #94a3b8;
+            --border-color: #1e3a5f;
+            --card-bg: #1a2332;
+            --card-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
+            --blue-light: #1a2d47;
+            --blue-border: #1e4d7b;
+            --input-bg: #0f172a;
+            --modal-overlay: rgba(0, 0, 0, 0.75);
+            --toast-bg: #0f172a;
+            --navbar-bg: rgba(15, 23, 42, 0.94);
+            --welcome-gradient: linear-gradient(135deg, #0f172a 0%, #1a2332 100%);
+            --hover-light: #1a2332;
+            --stat-bg: #0f172a;
+            --ticker-bg: #1a2332;
+            --vip-hot-glow: rgba(251, 146, 60, 0.45);
+            --vip-hot-border: #fb923c;
+            --vip-hot-bg: #2d1f10;
+            --vip-gold: #fbbf24;
+            --install-banner-bg: #1a2332;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+            -webkit-user-select: none;
+            user-select: none;
+            -webkit-touch-callout: none;
+        }
+        input,
+        textarea {
+            -webkit-user-select: text;
+            user-select: text;
+        }
+        html {
+            scroll-behavior: smooth;
+            overscroll-behavior: none;
+            height: 100%;
+            overflow: hidden;
+        }
+        body {
+            font-family: 'Tajawal', sans-serif;
+            background: #0f172a;
+            color: var(--text-primary);
+            direction: rtl;
+            height: 100vh;
+            height: 100dvh;
+            overflow: hidden;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            transition: background 0.4s, color 0.4s;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        .app-container {
+            width: 100%;
+            height: 100%;
+            max-width: 480px;
+            margin: 0 auto;
+            background: var(--bg-primary);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            transition: background 0.4s;
+            box-shadow: 0 0 60px rgba(0, 0, 0, 0.15);
+        }
+        @media (min-width: 481px) {
+            .app-container {
+                border-radius: 28px;
+                height: calc(100% - 40px);
+                margin-top: 20px;
+                margin-bottom: 20px;
+            }
+        }
+
+        /* Splash Screen */
+        #nativeSplash {
+            position: absolute;
+            inset: 0;
+            z-index: 9999;
+            background: #0f172a;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            transition: opacity 0.5s var(--ease-out-expo), transform 0.6s var(--ease-out-expo);
+            pointer-events: all;
+        }
+        #nativeSplash.hidden {
+            opacity: 0;
+            transform: scale(1.08);
+            pointer-events: none;
+        }
+        .splash-logo-container {
+            position: relative;
+            margin-bottom: 20px;
+        }
+        .splash-logo {
+            font-size: 64px;
+            font-weight: 900;
+            background: linear-gradient(135deg, #3b82f6, #60a5fa, #3b82f6);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            letter-spacing: 3px;
+            animation: splashPulse 2s ease-in-out infinite;
+        }
+        @keyframes splashPulse {
+            0%,
+            100% {
+                opacity: 0.9;
+                transform: scale(1);
+            }
+            50% {
+                opacity: 1;
+                transform: scale(1.05);
+            }
+        }
+        .splash-subtitle {
+            color: #94a3b8;
+            font-size: 16px;
+            letter-spacing: 2px;
+            animation: fadeInUp 0.8s ease-out 0.3s both;
+        }
+        .splash-loader {
+            width: 48px;
+            height: 4px;
+            background: #1e293b;
+            border-radius: 2px;
+            margin-top: 32px;
+            overflow: hidden;
+        }
+        .splash-loader-bar {
+            height: 100%;
+            width: 30%;
+            background: linear-gradient(90deg, #3b82f6, #60a5fa);
+            border-radius: 2px;
+            animation: splashLoading 1.2s var(--ease-in-out) infinite;
+        }
+        @keyframes splashLoading {
+            0% {
+                transform: translateX(-100%);
+            }
+            100% {
+                transform: translateX(400%);
+            }
+        }
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(16px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Scrollable page area */
+        .page-scroll-area {
+            flex: 1;
+            overflow-y: auto;
+            overflow-x: hidden;
+            -webkit-overflow-scrolling: touch;
+            overscroll-behavior: contain;
+            scroll-behavior: smooth;
+            padding-bottom: 16px;
+            position: relative;
+            z-index: 1;
+        }
+        .page-scroll-area::-webkit-scrollbar {
+            display: none;
+        }
+
+        /* Pull to refresh indicator */
+        .ptr-indicator {
+            position: absolute;
+            top: -60px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: var(--card-bg);
+            border: 2px solid #2563eb;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: top 0.2s;
+            z-index: 20;
+            box-shadow: 0 2px 12px rgba(37, 99, 235, 0.2);
+        }
+        .ptr-indicator.visible {
+            top: 16px;
+        }
+        .ptr-indicator i {
+            color: #2563eb;
+            font-size: 16px;
+            animation: ptrSpin 0.8s linear infinite;
+        }
+        @keyframes ptrSpin {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        /* Status bar spacer */
+        .status-bar-spacer {
+            height: var(--safe-top);
+            min-height: 20px;
+            background: var(--bg-primary);
+            transition: background 0.4s;
+            flex-shrink: 0;
+        }
+
+        /* Compact status bar */
+        .status-bar {
+            padding: 6px 16px 4px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 12px;
+            color: var(--text-muted);
+            background: var(--bg-primary);
+            flex-shrink: 0;
+            transition: background 0.4s;
+        }
+        .connection-status {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .dot-pulse {
+            width: 7px;
+            height: 7px;
+            background: #22c55e;
+            border-radius: 50%;
+            box-shadow: 0 0 8px #22c55e;
+            animation: pulseGreen 2s infinite;
+        }
+        @keyframes pulseGreen {
+            0%,
+            100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0.35;
+            }
+        }
+        .dot-pulse.offline {
+            background: #ef4444;
+            box-shadow: 0 0 8px #ef4444;
+        }
+
+        .main-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 8px 16px 12px;
+            background: var(--bg-primary);
+            flex-shrink: 0;
+            transition: background 0.4s;
+        }
+        .logo-area {
+            display: flex;
+            align-items: baseline;
+            gap: 6px;
+        }
+        .logo {
+            font-size: 28px;
+            font-weight: 900;
+            background: linear-gradient(135deg, #1e40af, #3b82f6);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            letter-spacing: 1px;
+        }
+
+        /* Welcome Screen */
+        .welcome-screen {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            padding: 24px 20px;
+            background: var(--welcome-gradient);
+            transition: background 0.4s;
+            overflow-y: auto;
+            -webkit-overflow-scrolling: touch;
+        }
+        .welcome-header {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .welcome-logo {
+            font-size: 48px;
+            font-weight: 900;
+            background: linear-gradient(135deg, #1e40af, #3b82f6);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            letter-spacing: 2px;
+            margin-bottom: 8px;
+        }
+        .welcome-slogan {
+            color: var(--text-muted);
+            font-size: 18px;
+            margin-bottom: 40px;
+        }
+        .welcome-actions {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            margin: 20px 0 30px;
+        }
+        .btn-welcome {
+            background: var(--card-bg);
+            border: 1.5px solid #3b82f6;
+            color: #1e40af;
+            font-weight: 600;
+            padding: 16px 20px;
+            border-radius: 40px;
+            font-size: 18px;
+            cursor: pointer;
+            transition: all 0.2s var(--spring-transition);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .btn-welcome:active {
+            transform: scale(0.96);
+            transition: transform 0.1s;
+        }
+        .btn-welcome-primary {
+            background: #2563eb;
+            border: none;
+            color: #ffffff;
+            font-weight: 700;
+            box-shadow: 0 4px 16px rgba(37, 99, 235, 0.35);
+        }
+        .btn-welcome-primary:active {
+            background: #1d4ed8;
+            box-shadow: 0 2px 8px rgba(37, 99, 235, 0.3);
+        }
+        .welcome-footer {
+            margin-top: auto;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 14px;
+            padding-bottom: 20px;
+        }
+        .lang-selector-welcome {
+            display: flex;
+            justify-content: center;
+            margin: 20px 0 10px;
+            gap: 10px;
+        }
+        .lang-btn {
+            background: var(--card-bg);
+            border: 1.5px solid #94a3b8;
+            color: var(--text-secondary);
+            padding: 8px 16px;
+            border-radius: 30px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.25s var(--spring-transition);
+        }
+        .lang-btn:active {
+            transform: scale(0.93);
+        }
+        .lang-btn.active {
+            background: #2563eb;
+            color: #ffffff;
+            border-color: #2563eb;
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+        }
+
+        /* Page panels */
+        .main-app,
+        .trade-page,
+        .wallet-page,
+        .market-page,
+        .admin-page,
+        .vip-page {
+            display: none;
+            flex-direction: column;
+            height: 100%;
+            background: var(--bg-secondary);
+            transition: background 0.4s;
+            position: absolute;
+            inset: 0;
+            z-index: 2;
+        }
+        .main-app.active,
+        .trade-page.active,
+        .wallet-page.active,
+        .market-page.active,
+        .admin-page.active,
+        .vip-page.active {
+            display: flex;
+            animation: pageSlideIn 0.35s var(--ease-out-expo);
+        }
+        @keyframes pageSlideIn {
+            from {
+                opacity: 0;
+                transform: translateX(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        .page-slide-out {
+            animation: pageSlideOut 0.25s var(--ease-in-out) forwards !important;
+        }
+        @keyframes pageSlideOut {
+            to {
+                opacity: 0;
+                transform: translateX(-30px);
+            }
+        }
+
+        .dashboard-content {
+            padding: 0 14px 20px;
+            background: var(--bg-secondary);
+        }
+        .wallet-card {
+            background: var(--card-bg);
+            border-radius: 22px;
+            padding: 18px 16px;
+            border: 1px solid var(--border-color);
+            margin: 6px 0 16px;
+            box-shadow: var(--card-shadow);
+            transition: all 0.35s;
+            position: relative;
+            overflow: hidden;
+        }
+        .wallet-card::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -30%;
+            width: 200px;
+            height: 200px;
+            background: radial-gradient(circle, rgba(37, 99, 235, 0.06) 0%, transparent 70%);
+            pointer-events: none;
+        }
+        .wallet-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 6px;
+        }
+        .wallet-title {
+            font-size: 15px;
+            color: var(--text-muted);
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .wallet-balance {
+            font-size: 40px;
+            font-weight: 800;
+            letter-spacing: 1px;
+            color: var(--text-primary);
+            margin: 4px 0 2px;
+            position: relative;
+            z-index: 1;
+        }
+        .margin-info {
+            color: var(--text-secondary);
+            font-size: 14px;
+            margin-bottom: 16px;
+            position: relative;
+            z-index: 1;
+        }
+        .wallet-actions {
+            display: flex;
+            gap: 10px;
+            position: relative;
+            z-index: 1;
+        }
+        .btn-primary {
+            background: #2563eb;
+            border: none;
+            color: #ffffff;
+            font-weight: 700;
+            padding: 12px 18px;
+            border-radius: 40px;
+            font-size: 15px;
+            flex: 1;
+            cursor: pointer;
+            transition: all 0.2s var(--spring-transition);
+            box-shadow: 0 4px 14px rgba(37, 99, 235, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+        .btn-primary:active {
+            transform: scale(0.95);
+            box-shadow: 0 2px 6px rgba(37, 99, 235, 0.2);
+            transition: transform 0.1s;
+        }
+        .btn-secondary {
+            background: transparent;
+            border: 1.5px solid #3b82f6;
+            color: #1e40af;
+            font-weight: 600;
+            padding: 12px 18px;
+            border-radius: 40px;
+            font-size: 15px;
+            flex: 1;
+            cursor: pointer;
+            transition: all 0.2s var(--spring-transition);
+        }
+        .btn-secondary:active {
+            transform: scale(0.95);
+            background: var(--blue-light);
+            transition: transform 0.1s;
+        }
+        .start-trade-card {
+            background: var(--blue-light);
+            border-radius: 20px;
+            padding: 16px 18px;
+            margin: 18px 0;
+            border: 1px solid var(--blue-border);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            cursor: pointer;
+            transition: all 0.2s var(--spring-transition);
+        }
+        .start-trade-card:active {
+            transform: scale(0.97);
+            transition: transform 0.1s;
+        }
+        .quick-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 8px;
+            margin: 22px 0 18px;
+        }
+        .quick-item {
+            background: var(--card-bg);
+            border-radius: 18px;
+            padding: 14px 4px;
+            text-align: center;
+            border: 1px solid var(--border-color);
+            cursor: pointer;
+            color: var(--text-secondary);
+            transition: all 0.2s var(--spring-transition);
+            box-shadow: var(--card-shadow);
+        }
+        .quick-item:active {
+            transform: scale(0.92);
+            transition: transform 0.1s;
+            box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+        }
+        .quick-item i {
+            font-size: 22px;
+            color: #2563eb;
+            margin-bottom: 6px;
+            display: block;
+        }
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+            color: var(--text-primary);
+            align-items: center;
+        }
+        .market-list {
+            background: var(--card-bg);
+            border-radius: 20px;
+            padding: 4px 0;
+            border: 1px solid var(--border-color);
+            box-shadow: var(--card-shadow);
+        }
+        .market-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 13px 16px;
+            border-bottom: 1px solid var(--border-color);
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .market-row:active {
+            background: var(--hover-light);
+        }
+        .market-row:last-child {
+            border-bottom: none;
+        }
+        .coin-info {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .coin-icon {
+            width: 34px;
+            height: 34px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 16px;
+            background: #f1f5f9;
+        }
+        .coin-price {
+            font-weight: 700;
+            color: var(--text-primary);
+        }
+        .coin-change {
+            font-size: 13px;
+        }
+
+        /* Bottom Tab Bar - Native Style */
+        #bottomNav {
+            display: none;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: var(--navbar-bg);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-top: 0.5px solid var(--border-color);
+            justify-content: space-around;
+            padding: 6px 8px calc(6px + var(--safe-bottom));
+            z-index: 20;
+            flex-shrink: 0;
+            transition: background 0.4s;
+        }
+        #bottomNav.visible {
+            display: flex;
+        }
+        .nav-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: var(--text-muted);
+            font-size: 11px;
+            cursor: pointer;
+            min-width: 56px;
+            padding: 4px 6px;
+            transition: all 0.2s var(--spring-transition);
+            position: relative;
+            gap: 2px;
+        }
+        .nav-item:active {
+            transform: scale(0.9);
+            transition: transform 0.1s;
+        }
+        .nav-item i {
+            font-size: 20px;
+            transition: transform 0.3s var(--spring-transition);
+        }
+        .nav-item.active {
+            color: #2563eb;
+        }
+        .nav-item.active i {
+            transform: translateY(-2px);
+        }
+        .nav-item.active::after {
+            content: '';
+            position: absolute;
+            top: -4px;
+            width: 24px;
+            height: 3px;
+            background: #2563eb;
+            border-radius: 0 0 3px 3px;
+        }
+
+        /* Bottom Sheet Modal */
+        .modal {
+            display: flex;
+            position: absolute;
+            inset: 0;
+            background: transparent;
+            align-items: flex-end;
+            justify-content: center;
+            z-index: 100;
+            pointer-events: none;
+            transition: background 0.35s;
+        }
+        .modal.show {
+            background: var(--modal-overlay);
+            pointer-events: all;
+        }
+        .modal-sheet {
+            background: var(--card-bg);
+            width: 100%;
+            max-width: 480px;
+            border-radius: 24px 24px 0 0;
+            padding: 20px 18px calc(20px + var(--safe-bottom));
+            border: 1px solid var(--border-color);
+            box-shadow: 0 -8px 40px rgba(0, 0, 0, 0.12);
+            max-height: 88vh;
+            overflow-y: auto;
+            transform: translateY(100%);
+            transition: transform 0.4s var(--ease-out-expo);
+            position: relative;
+        }
+        .modal.show .modal-sheet {
+            transform: translateY(0);
+        }
+        .modal-sheet-handle {
+            width: 36px;
+            height: 4px;
+            background: #cbd5e1;
+            border-radius: 2px;
+            margin: 0 auto 16px;
+            cursor: pointer;
+        }
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .modal-header h2 {
+            font-size: 22px;
+            font-weight: 800;
+            color: var(--text-primary);
+        }
+        .close-modal {
+            background: #f1f5f9;
+            border: none;
+            color: #64748b;
+            font-size: 20px;
+            cursor: pointer;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s;
+        }
+        .close-modal:active {
+            background: #e2e8f0;
+            transform: scale(0.9);
+        }
+        .input-group {
+            margin-bottom: 16px;
+        }
+        .input-group label {
+            display: block;
+            margin-bottom: 6px;
+            font-size: 14px;
+            color: var(--text-muted);
+            font-weight: 500;
+        }
+        .input-field {
+            width: 100%;
+            background: var(--input-bg);
+            border: 1.5px solid var(--border-color);
+            border-radius: 16px;
+            padding: 15px 16px;
+            color: var(--text-primary);
+            font-size: 16px;
+            font-family: 'Tajawal', sans-serif;
+            transition: all 0.25s;
+            outline: none;
+        }
+        .input-field:focus {
+            border-color: #2563eb;
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+            background: var(--card-bg);
+        }
+        .double-input {
+            display: flex;
+            gap: 10px;
+        }
+        .double-input .input-group {
+            flex: 1;
+        }
+        .modal-footer {
+            text-align: center;
+            margin-top: 20px;
+            color: var(--text-muted);
+            font-size: 14px;
+        }
+        .link {
+            color: #2563eb;
+            text-decoration: none;
+            font-weight: 600;
+            cursor: pointer;
+        }
+        .terms {
+            font-size: 13px;
+            margin: 14px 0 8px;
+            color: var(--text-muted);
+        }
+        .text-muted {
+            color: var(--text-muted);
+        }
+        .mt-2 {
+            margin-top: 8px;
+        }
+        .copy-field {
+            display: flex;
+            align-items: center;
+            background: var(--input-bg);
+            border: 1.5px solid var(--border-color);
+            border-radius: 16px;
+            padding: 3px 8px 3px 3px;
+            margin-bottom: 10px;
+        }
+        .copy-field input {
+            flex: 1;
+            background: transparent;
+            border: none;
+            color: var(--text-primary);
+            padding: 12px 8px;
+            font-size: 14px;
+            outline: none;
+            font-family: 'Tajawal';
+        }
+        .copy-btn {
+            background: var(--blue-light);
+            border: none;
+            color: #2563eb;
+            padding: 9px 14px;
+            border-radius: 14px;
+            font-size: 13px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+            white-space: nowrap;
+        }
+        .copy-btn:active {
+            background: #dbeafe;
+            transform: scale(0.93);
+        }
+        .stats-row {
+            display: flex;
+            justify-content: space-between;
+            background: var(--stat-bg);
+            padding: 14px 16px;
+            border-radius: 18px;
+            margin: 14px 0;
+        }
+        .stat-value {
+            font-size: 26px;
+            font-weight: 800;
+            color: #2563eb;
+        }
+        .stat-label {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-top: 4px;
+        }
+        .levels-box {
+            background: var(--card-bg);
+            border-radius: 20px;
+            padding: 14px;
+            border: 1px solid var(--border-color);
+        }
+        .level-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+        .level-row:last-child {
+            border-bottom: none;
+        }
+        .level-name {
+            font-weight: 700;
+            color: var(--text-primary);
+        }
+        .level-badge {
+            background: var(--blue-light);
+            padding: 5px 12px;
+            border-radius: 30px;
+            font-size: 13px;
+            font-weight: 600;
+            color: #2563eb;
+        }
+
+        /* Toast */
+        .toast-container {
+            position: absolute;
+            top: 20px;
+            left: 0;
+            right: 0;
+            display: flex;
+            justify-content: center;
+            pointer-events: none;
+            z-index: 9999;
+        }
+        .toast-message {
+            background: #1e293b;
+            border: 1px solid #3b82f6;
+            border-radius: 40px;
+            padding: 13px 26px;
+            color: #ffffff;
+            font-weight: 500;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            pointer-events: auto;
+            max-width: 88%;
+            text-align: center;
+            animation: toastInOut 3.2s forwards;
+            font-size: 14px;
+        }
+        @keyframes toastInOut {
+            0% {
+                opacity: 0;
+                transform: translateY(-24px) scale(0.9);
+            }
+            8% {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+            88% {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+            100% {
+                opacity: 0;
+                transform: translateY(-24px) scale(0.9);
+            }
+        }
+        .captcha-box {
+            background: var(--input-bg);
+            border-radius: 16px;
+            padding: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 4px;
+        }
+        .captcha-canvas {
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+            background: #ffffff;
+            cursor: pointer;
+        }
+        .modal-lang-selector {
+            display: flex;
+            gap: 6px;
+            margin-right: auto;
+            margin-left: 10px;
+        }
+        .modal-lang-btn {
+            background: var(--card-bg);
+            border: 1.5px solid #94a3b8;
+            color: var(--text-secondary);
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 12px;
+            cursor: pointer;
+        }
+        .modal-lang-btn.active {
+            background: #2563eb;
+            color: #ffffff;
+            border-color: #2563eb;
+        }
+
+        /* Trade Page */
+        .trade-header,
+        .wallet-header-nav,
+        .market-header,
+        .admin-header,
+        .vip-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 14px;
+            background: var(--bg-primary);
+            flex-shrink: 0;
+            transition: background 0.4s;
+            min-height: 50px;
+        }
+        .header-left {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .back-btn {
+            background: #f1f5f9;
+            border: none;
+            color: #2563eb;
+            font-size: 20px;
+            cursor: pointer;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s;
+        }
+        .back-btn:active {
+            background: #e2e8f0;
+            transform: scale(0.9);
+        }
+        .page-title {
+            font-weight: 700;
+            font-size: 18px;
+            color: var(--text-primary);
+        }
+        .trade-pair {
+            font-weight: 700;
+            font-size: 17px;
+            color: var(--text-primary);
+        }
+        .live-badge {
+            color: #22c55e;
+            background: #f0fdf4;
+            padding: 3px 10px;
+            border-radius: 30px;
+            font-size: 11px;
+            margin-right: 8px;
+            animation: livePulse 2s infinite;
+        }
+        @keyframes livePulse {
+            0%,
+            100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0.5;
+            }
+        }
+        .chart-container {
+            padding: 8px 6px;
+            background: var(--card-bg);
+            margin: 4px 8px;
+            border-radius: 16px;
+            border: 1px solid var(--border-color);
+        }
+        .timeframe-tabs {
+            display: flex;
+            gap: 6px;
+            margin: 10px 14px;
+            flex-wrap: wrap;
+        }
+        .tf-btn {
+            background: #f1f5f9;
+            border: 1.5px solid #cbd5e1;
+            color: #475569;
+            padding: 5px 14px;
+            border-radius: 30px;
+            font-size: 13px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .tf-btn:active {
+            transform: scale(0.93);
+        }
+        .tf-btn.active {
+            background: #2563eb;
+            color: #ffffff;
+            border-color: #2563eb;
+        }
+        .chart-wrapper {
+            position: relative;
+            height: 280px;
+            margin: 6px 0;
+        }
+        #forexChart {
+            width: 100% !important;
+            height: 100% !important;
+            display: block;
+            background: var(--card-bg);
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+        }
+        .trade-stats {
+            display: flex;
+            justify-content: space-around;
+            background: var(--card-bg);
+            border-radius: 20px;
+            padding: 10px;
+            margin: 12px 14px;
+            border: 1px solid var(--border-color);
+        }
+        .order-book-section {
+            background: var(--card-bg);
+            border-radius: 20px;
+            margin: 6px 14px;
+            padding: 12px 14px;
+            border: 1px solid var(--border-color);
+        }
+        .order-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 8px 0;
+            border-bottom: 1px solid var(--border-color);
+            color: var(--text-secondary);
+        }
+
+        .deposit-network-tabs,
+        .withdraw-network-tabs {
+            display: flex;
+            gap: 6px;
+            margin-bottom: 18px;
+        }
+        .network-tab {
+            background: #f1f5f9;
+            border: 1.5px solid #cbd5e1;
+            color: #475569;
+            padding: 8px 10px;
+            border-radius: 30px;
+            font-size: 12px;
+            cursor: pointer;
+            flex: 1;
+            text-align: center;
+            transition: all 0.2s;
+        }
+        .network-tab:active {
+            transform: scale(0.95);
+        }
+        .network-tab.active {
+            background: #2563eb;
+            color: #ffffff;
+            border-color: #2563eb;
+        }
+        .address-qr-placeholder {
+            background: #ffffff;
+            border-radius: 16px;
+            padding: 10px;
+            margin: 10px auto;
+            display: flex;
+            justify-content: center;
+            border: 1px solid #e2e8f0;
+            max-width: 180px;
+        }
+        .qr-code-img {
+            width: 150px;
+            height: 150px;
+            display: block;
+        }
+        .address-text {
+            background: var(--input-bg);
+            padding: 10px;
+            border-radius: 30px;
+            font-family: monospace;
+            word-break: break-all;
+            margin: 10px 0;
+            border: 1px solid var(--border-color);
+            color: var(--text-primary);
+            text-align: center;
+            direction: ltr;
+            font-size: 13px;
+        }
+        .warning-note {
+            background: #fefce8;
+            border: 1px solid #f59e0b;
+            border-radius: 16px;
+            padding: 10px;
+            margin-top: 18px;
+            display: flex;
+            gap: 10px;
+            color: #92400e;
+            font-size: 13px;
+        }
+        .wallet-tabs {
+            display: flex;
+            padding: 6px 10px;
+            gap: 4px;
+            background: var(--bg-primary);
+            overflow-x: auto;
+            flex-shrink: 0;
+            -webkit-overflow-scrolling: touch;
+        }
+        .wallet-tabs::-webkit-scrollbar {
+            display: none;
+        }
+        .wallet-tab {
+            background: transparent;
+            border: none;
+            color: var(--text-muted);
+            font-weight: 600;
+            padding: 9px 12px;
+            font-size: 14px;
+            cursor: pointer;
+            border-radius: 30px;
+            white-space: nowrap;
+            transition: all 0.2s;
+        }
+        .wallet-tab:active {
+            transform: scale(0.94);
+        }
+        .wallet-tab.active {
+            background: #2563eb;
+            color: #ffffff;
+            box-shadow: 0 2px 10px rgba(37, 99, 235, 0.3);
+        }
+        .wallet-page-content,
+        .market-page-content,
+        .admin-page-content,
+        .vip-page-content {
+            padding: 14px;
+            flex: 1;
+            background: var(--bg-secondary);
+            overflow-y: auto;
+            -webkit-overflow-scrolling: touch;
+        }
+        .overview-card {
+            background: var(--card-bg);
+            border-radius: 20px;
+            padding: 18px;
+            border: 1px solid var(--border-color);
+            margin-bottom: 14px;
+            box-shadow: var(--card-shadow);
+        }
+        .overview-amount {
+            font-size: 34px;
+            font-weight: 800;
+            margin-top: 6px;
+            color: var(--text-primary);
+        }
+        .colorful-item {
+            background: var(--card-bg);
+            border-radius: 16px;
+            padding: 14px;
+            border: 1px solid var(--border-color);
+            border-right: 4px solid;
+        }
+
+        /* VIP Offers */
+        .vip-header-banner {
+            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+            border-radius: 22px;
+            padding: 22px 18px;
+            margin-bottom: 18px;
+            color: #ffffff;
+            text-align: center;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.18);
+            position: relative;
+            overflow: hidden;
+        }
+        .vip-header-banner::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle at 30% 50%, rgba(251, 191, 36, 0.15) 0%, transparent 60%);
+            pointer-events: none;
+        }
+        .vip-header-icon {
+            font-size: 38px;
+            margin-bottom: 10px;
+            color: #fbbf24;
+            position: relative;
+        }
+        .vip-header-title {
+            font-size: 24px;
+            font-weight: 900;
+            margin-bottom: 4px;
+            position: relative;
+        }
+        .vip-header-subtitle {
+            font-size: 14px;
+            color: #94a3b8;
+            position: relative;
+        }
+        .vip-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        .vip-offer-card {
+            background: var(--card-bg);
+            border-radius: 20px;
+            padding: 18px 16px;
+            border: 1.5px solid var(--border-color);
+            box-shadow: var(--card-shadow);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        .vip-offer-card:active {
+            transform: scale(0.98);
+        }
+        .vip-offer-card.hot-offer {
+            border: 2px solid var(--vip-hot-border) !important;
+            background: var(--vip-hot-bg) !important;
+            box-shadow: 0 0 28px var(--vip-hot-glow), 0 6px 20px rgba(249, 115, 22, 0.2) !important;
+            animation: hotPulse 2.5s ease-in-out infinite;
+        }
+        @keyframes hotPulse {
+            0%,
+            100% {
+                box-shadow: 0 0 28px var(--vip-hot-glow), 0 6px 20px rgba(249, 115, 22, 0.2);
+            }
+            50% {
+                box-shadow: 0 0 42px var(--vip-hot-glow), 0 10px 28px rgba(249, 115, 22, 0.35);
+            }
+        }
+        .hot-badge {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background: linear-gradient(135deg, #f97316, #ef4444);
+            color: #ffffff;
+            padding: 5px 12px;
+            border-radius: 30px;
+            font-size: 12px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            box-shadow: 0 3px 12px rgba(239, 68, 68, 0.4);
+            animation: badgeShine 1.5s ease-in-out infinite;
+        }
+        @keyframes badgeShine {
+            0%,
+            100% {
+                filter: brightness(1);
+            }
+            50% {
+                filter: brightness(1.3);
+            }
+        }
+        .vip-offer-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 14px;
+        }
+        .vip-offer-rank {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 900;
+            font-size: 18px;
+            color: #ffffff;
+            background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+            flex-shrink: 0;
+        }
+        .hot-offer .vip-offer-rank {
+            background: linear-gradient(135deg, #f97316, #ea580c);
+            box-shadow: 0 0 18px rgba(249, 115, 22, 0.5);
+        }
+        .vip-offer-name {
+            font-weight: 800;
+            font-size: 16px;
+            color: var(--text-primary);
+        }
+        .vip-offer-duration {
+            font-size: 12px;
+            color: var(--text-muted);
+        }
+        .vip-offer-stats {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 8px;
+            margin-bottom: 14px;
+        }
+        .vip-stat-box {
+            background: var(--stat-bg);
+            border-radius: 14px;
+            padding: 10px 8px;
+            text-align: center;
+            border: 1px solid var(--border-color);
+            transition: background 0.3s;
+        }
+        .vip-stat-label {
+            font-size: 10px;
+            color: var(--text-muted);
+            margin-bottom: 3px;
+            font-weight: 500;
+        }
+        .vip-stat-value {
+            font-size: 16px;
+            font-weight: 800;
+            color: var(--text-primary);
+        }
+        .vip-subscribe-btn {
+            width: 100%;
+            padding: 13px;
+            border-radius: 40px;
+            font-size: 15px;
+            font-weight: 700;
+            cursor: pointer;
+            border: none;
+            transition: all 0.3s;
+            background: linear-gradient(135deg, #2563eb, #1d4ed8);
+            color: #ffffff;
+            box-shadow: 0 4px 14px rgba(37, 99, 235, 0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+        }
+        .vip-subscribe-btn:active {
+            transform: scale(0.95);
+        }
+        .hot-offer .vip-subscribe-btn {
+            background: linear-gradient(135deg, #f97316, #ea580c);
+            box-shadow: 0 4px 16px rgba(249, 115, 22, 0.45);
+            animation: btnGlow 1.8s ease-in-out infinite;
+        }
+        @keyframes btnGlow {
+            0%,
+            100% {
+                box-shadow: 0 4px 16px rgba(249, 115, 22, 0.45);
+            }
+            50% {
+                box-shadow: 0 6px 26px rgba(249, 115, 22, 0.7);
+            }
+        }
+        .vip-footer-note {
+            margin-top: 22px;
+            padding: 14px 18px;
+            background: var(--card-bg);
+            border-radius: 18px;
+            border: 1px solid var(--border-color);
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 13px;
+            line-height: 1.8;
+        }
+        .eye-icon {
+            cursor: pointer;
+            color: #2563eb;
+            margin-right: 6px;
+            font-size: 18px;
+            padding: 4px;
+        }
+
+        /* Admin */
+        .admin-profile-section {
+            padding: 18px 14px 10px;
+            border-bottom: 1px solid var(--border-color);
+            margin-bottom: 6px;
+            background: var(--bg-primary);
+        }
+        .admin-user-name {
+            font-size: 24px;
+            font-weight: 800;
+            margin-bottom: 4px;
+            color: var(--text-primary);
+        }
+        .admin-menu-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 16px 18px;
+            background: var(--bg-primary);
+            border-bottom: 1px solid var(--border-color);
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .admin-menu-item:active {
+            background: var(--hover-light);
+        }
+        .dark-mode-toggle {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 16px 18px;
+            background: var(--bg-primary);
+            border-bottom: 1px solid var(--border-color);
+        }
+        .toggle-switch {
+            position: relative;
+            display: inline-block;
+            width: 50px;
+            height: 28px;
+        }
+        .toggle-switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #cbd5e1;
+            transition: .4s;
+            border-radius: 34px;
+        }
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 22px;
+            width: 22px;
+            left: 3px;
+            bottom: 3px;
+            background-color: white;
+            transition: .4s;
+            border-radius: 50%;
+        }
+        input:checked+.slider {
+            background-color: #2563eb;
+        }
+        input:checked+.slider:before {
+            transform: translateX(22px);
+        }
+        .logout-admin-item {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            padding: 18px 18px;
+            background: var(--bg-primary);
+            color: #ef4444;
+            font-size: 17px;
+            font-weight: 500;
+            cursor: pointer;
+            margin-top: 6px;
+            border-top: 1px solid var(--border-color);
+        }
+        .logout-admin-item:active {
+            background: #fef2f2;
+        }
+
+        .market-coin-row-enhanced {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 6px;
+            border-bottom: 1px solid var(--border-color);
+            background: var(--card-bg);
+            border-radius: 14px;
+            margin-bottom: 4px;
+            border: 1px solid var(--border-color);
+        }
+        .sparkline-container {
+            width: 70px;
+            height: 26px;
+            margin: 0 6px;
+        }
+
+        /* Ripple */
+        .ripple {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(37, 99, 235, 0.25);
+            transform: scale(0);
+            animation: rippleEffect 0.6s ease-out;
+            pointer-events: none;
+        }
+        @keyframes rippleEffect {
+            to {
+                transform: scale(4);
+                opacity: 0;
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 380px) {
+            .vip-offer-stats {
+                grid-template-columns: 1fr 1fr;
+                gap: 6px;
+            }
+            .vip-stat-box:last-child {
+                grid-column: span 2;
+            }
+            .wallet-balance {
+                font-size: 32px;
+            }
+            .quick-grid {
+                grid-template-columns: repeat(4, 1fr);
+                gap: 5px;
+            }
+            .quick-item {
+                padding: 10px 2px;
+                font-size: 11px;
+            }
+            .quick-item i {
+                font-size: 18px;
+            }
+        }
+
+        .dark-mode .vip-header-banner {
+            background: linear-gradient(135deg, #0f172a 0%, #020617 100%);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
+        }
+        .dark-mode .modal-sheet-handle {
+            background: #475569;
+        }
+        .dark-mode .back-btn {
+            background: #1e293b;
+        }
+        .dark-mode .close-modal {
+            background: #1e293b;
+            color: #94a3b8;
+        }
+    </style>
+</head>
+<body>
+    <div class="app-container" id="appContainer">
+        <!-- Native Splash Screen -->
+        <div id="nativeSplash">
+            <div class="splash-logo-container">
+                <div class="splash-logo">Pocket24</div>
+            </div>
+            <div class="splash-subtitle">منصة التداول الاحترافية</div>
+            <div class="splash-loader">
+                <div class="splash-loader-bar"></div>
+            </div>
+        </div>
+
+        <!-- Status Bar Spacer -->
+        <div class="status-bar-spacer"></div>
+
+        <!-- Welcome Screen -->
+        <div id="welcomeScreen" class="welcome-screen" style="display:none;">
+            <div class="welcome-header">
+                <div class="welcome-logo" data-i18n="appName">Pocket24</div>
+                <div class="welcome-slogan" data-i18n="welcomeSlogan">تداول العقود الآجلة والفوركس باحترافية</div>
+            </div>
+            <div class="welcome-actions">
+                <button class="btn-welcome btn-welcome-primary" id="welcomeLoginBtn"><i class="fas fa-sign-in-alt" style="margin-left: 10px;"></i> <span data-i18n="login">تسجيل الدخول</span></button>
+                <button class="btn-welcome" id="welcomeSignupBtn"><i class="fas fa-user-plus" style="margin-left: 10px;"></i> <span data-i18n="signup">إنشاء حساب جديد</span></button>
+            </div>
+            <div class="lang-selector-welcome">
+                <button class="lang-btn active" data-lang="ar">العربية</button>
+                <button class="lang-btn" data-lang="en">English</button>
+                <button class="lang-btn" data-lang="fr">Français</button>
+            </div>
+            <div class="welcome-footer">
+                <span data-i18n="trustedPlatform">Pocket24 · منصة تداول موثوقة</span>
+                <div style="margin-top: 12px; display: flex; gap: 16px; justify-content: center;">
+                    <span class="link" id="supportLinkWelcome">الدعم</span>
+                    <span class="link" id="legalLinkWelcome">القانونية</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main App -->
+        <div id="mainApp" class="main-app">
+            <div class="status-bar">
+                <div class="connection-status">
+                    <span class="dot-pulse" id="connectionDot"></span>
+                    <span id="connectionText" data-i18n="connected">متصل</span>
+                </div>
+                <div>Pocket24</div>
+            </div>
+            <div class="main-header">
+                <div class="logo-area"><span class="logo" data-i18n="appName">Pocket24</span></div>
+                <div></div>
+            </div>
+            <div class="page-scroll-area" id="homeScrollArea">
+                <div class="ptr-indicator" id="homePtrIndicator"><i class="fas fa-sync-alt"></i></div>
+                <div class="dashboard-content">
+                    <div class="wallet-card">
+                        <div class="wallet-header">
+                            <span class="wallet-title"><i class="fas fa-wallet"></i> <span data-i18n="totalWallet">إجمالي المحفظة</span></span>
+                            <i class="fas fa-eye eye-icon" id="toggleMainBalanceEye"></i>
+                        </div>
+                        <div class="wallet-balance" id="mainWalletBalanceDisplay">$0.00</div>
+                        <div class="margin-info"><span data-i18n="margin">الهامش</span>: 0.00$</div>
+                        <div class="wallet-actions">
+                            <button class="btn-primary" id="addFundsBtn"><i class="fas fa-plus-circle"></i> <span data-i18n="addFunds">إضافة أموال</span></button>
+                            <button class="btn-secondary" id="viewWalletBtn"><i class="fas fa-chart-pie"></i> <span data-i18n="viewWallet">عرض المحفظة</span></button>
+                        </div>
+                    </div>
+                    <div class="start-trade-card" id="startTradeCard">
+                        <div><h3 data-i18n="startTrade">ابدأ التداول</h3><p data-i18n="openFutures" style="font-size:13px;color:var(--text-muted);">افتح أول صفحة عقود آجلة الآن</p></div>
+                        <div><i class="fas fa-arrow-up" style="color:#2563eb;font-size:24px;"></i></div>
+                    </div>
+                    <div class="quick-grid">
+                        <div class="quick-item" data-action="invite"><i class="fas fa-user-plus"></i><span data-i18n="invite">دعوة</span></div>
+                        <div class="quick-item" data-action="withdraw"><i class="fas fa-arrow-down"></i><span data-i18n="withdraw">سحب</span></div>
+                        <div class="quick-item" data-action="trade"><i class="fas fa-chart-line"></i><span data-i18n="trade">تداول</span></div>
+                        <div class="quick-item" data-action="deposit"><i class="fas fa-arrow-up"></i><span data-i18n="deposit">إيداع</span></div>
+                    </div>
+                    <div class="market-section">
+                        <div class="section-header"><h4><i class="fas fa-chart-bar" style="margin-left:8px;"></i><span data-i18n="marketPrices">أسعار السوق</span></h4></div>
+                        <div class="market-list" id="homeMarketList"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Trade Page -->
+        <div id="tradePage" class="trade-page">
+            <div class="trade-header">
+                <div class="header-left">
+                    <button class="back-btn" id="backFromTradeBtn"><i class="fas fa-arrow-right"></i></button>
+                    <span class="trade-pair">EUR/USD <span class="live-badge"><i class="fas fa-circle"></i> فوركس مباشر</span></span>
+                </div>
+            </div>
+            <div class="page-scroll-area" id="tradeScrollArea">
+                <div class="timeframe-tabs">
+                    <button class="tf-btn active" data-tf="1">1m</button>
+                    <button class="tf-btn" data-tf="5">5m</button>
+                    <button class="tf-btn" data-tf="60">1h</button>
+                    <button class="tf-btn" data-tf="120">2h</button>
+                </div>
+                <div class="chart-container">
+                    <div style="display:flex;justify-content:space-between;margin-bottom:4px;padding:0 8px;font-size:13px;">
+                        <span>رافعة مالية حتى 100x</span>
+                        <span id="chartPriceDisplay">1.0850</span>
+                    </div>
+                    <div class="chart-wrapper"><canvas id="forexChart"></canvas></div>
+                </div>
+                <div class="trade-stats">
+                    <div><div style="font-size:12px;color:var(--text-muted);">أعلى (24h)</div><div style="font-weight:700;">1.0872</div></div>
+                    <div><div style="font-size:12px;color:var(--text-muted);">أدنى (24h)</div><div style="font-weight:700;">1.0820</div></div>
+                    <div><div style="font-size:12px;color:var(--text-muted);">حجم التداول</div><div style="font-weight:700;">2.4B</div></div>
+                </div>
+                <div class="order-book-section">
+                    <div style="display:flex;justify-content:space-between;margin-bottom:8px;font-size:14px;"><span>المراكز المفتوحة (0)</span></div>
+                    <div class="order-row"><span>لا توجد مراكز</span></div>
+                </div>
+                <div style="margin:14px;display:flex;gap:8px;">
+                    <input type="text" class="input-field" id="tradePageCodeInput" placeholder="أدخل كود التداول" style="flex:1;">
+                    <button class="btn-secondary" id="verifyTradePageCodeBtn" style="flex:0.35;white-space:nowrap;">تحقق</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Wallet Page -->
+        <div id="walletPage" class="wallet-page">
+            <div class="wallet-header-nav">
+                <div class="header-left">
+                    <button class="back-btn" id="backFromWalletBtn"><i class="fas fa-arrow-right"></i></button>
+                    <span class="page-title">المحفظة</span>
+                </div>
+            </div>
+            <div class="wallet-tabs">
+                <button class="wallet-tab active" data-wallet-tab="overview">نظرة عامة</button>
+                <button class="wallet-tab" data-wallet-tab="deposit">إيداع</button>
+                <button class="wallet-tab" data-wallet-tab="withdraw">سحب</button>
+                <button class="wallet-tab" data-wallet-tab="transfer">تحويل</button>
+                <button class="wallet-tab" data-wallet-tab="history">السجل</button>
+            </div>
+            <div class="wallet-page-content" id="walletTabContent"></div>
+        </div>
+
+        <!-- Market Page -->
+        <div id="marketPage" class="market-page">
+            <div class="market-header">
+                <div class="header-left">
+                    <button class="back-btn" id="backFromMarketBtn"><i class="fas fa-arrow-right"></i></button>
+                    <span class="page-title">أفضل 10 عملات رقمية</span>
+                </div>
+            </div>
+            <div class="market-page-content" id="fullMarketCoinList"></div>
+        </div>
+
+        <!-- VIP Page -->
+        <div id="vipPage" class="vip-page">
+            <div class="vip-header">
+                <div class="header-left">
+                    <button class="back-btn" id="backFromVipBtn"><i class="fas fa-arrow-right"></i></button>
+                    <span class="page-title"><i class="fas fa-crown" style="color:#fbbf24;"></i> عروض VIP الحصرية</span>
+                </div>
+            </div>
+            <div class="vip-page-content">
+                <div class="vip-header-banner">
+                    <div class="vip-header-icon"><i class="fas fa-crown"></i></div>
+                    <div class="vip-header-title">VIP الحصرية</div>
+                    <div class="vip-header-subtitle">استثمر بذكاء مع عوائد يومية مضمونة لمدة 30 يومًا</div>
+                </div>
+                <div class="vip-grid" id="vipOffersContainer"></div>
+                <div class="vip-footer-note">
+                    <i class="fas fa-shield-alt"></i> جميع الاشتراكات صالحة لمدة <strong>30 يومًا</strong> فقط. <br>
+                    <i class="fas fa-coins"></i> الحد الأدنى للإيداع: <strong>50$</strong> · أرباح يومية مضمونة بنسبة <strong>20%</strong> من مبلغ الإيداع.
+                </div>
+            </div>
+        </div>
+
+        <!-- Admin Page -->
+        <div id="adminPage" class="admin-page">
+            <div class="admin-header">
+                <div class="header-left">
+                    <button class="back-btn" id="backFromAdminBtn"><i class="fas fa-arrow-right"></i></button>
+                    <span class="page-title">الإعدادات</span>
+                </div>
+            </div>
+            <div class="admin-page-content">
+                <div class="admin-profile-section">
+                    <div class="admin-user-name" id="adminDisplayName">حمد كريم</div>
+                    <div><span id="adminUserBadge" style="color:var(--text-muted);font-size:13px;">عميل مميز</span></div>
+                </div>
+                <div class="admin-menu-item" id="personalEpisodeBtn">
+                    <div><i class="fas fa-user-circle" style="margin-left:12px;color:#2563eb;"></i>الحلقة الشخصية</div>
+                    <i class="fas fa-chevron-left" style="color:var(--text-muted);"></i>
+                </div>
+                <div class="admin-menu-item" id="notificationsBtn">
+                    <div><i class="fas fa-bell" style="margin-left:12px;color:#2563eb;"></i>الإشعارات</div>
+                    <i class="fas fa-chevron-left" style="color:var(--text-muted);"></i>
+                </div>
+                <div class="admin-menu-item" id="supportBtnAdmin">
+                    <div><i class="fas fa-headset" style="margin-left:12px;color:#2563eb;"></i>الدعم</div>
+                    <i class="fas fa-chevron-left" style="color:var(--text-muted);"></i>
+                </div>
+                <div class="admin-menu-item" id="legalBtnAdmin">
+                    <div><i class="fas fa-gavel" style="margin-left:12px;color:#2563eb;"></i>القانونية</div>
+                    <i class="fas fa-chevron-left" style="color:var(--text-muted);"></i>
+                </div>
+                <div class="dark-mode-toggle">
+                    <div><i class="fas fa-moon" style="margin-left:12px;color:#2563eb;"></i>الوضع الداكن</div>
+                    <label class="toggle-switch">
+                        <input type="checkbox" id="darkModeToggle">
+                        <span class="slider"></span>
+                    </label>
+                </div>
+                <div class="logout-admin-item" id="logoutAdminBtn">
+                    <i class="fas fa-sign-out-alt"></i><span>تسجيل الخروج</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bottom Tab Bar -->
+        <div id="bottomNav">
+            <div class="nav-item active" data-nav="home"><i class="fas fa-home"></i><span data-i18n="home">الرئيسية</span></div>
+            <div class="nav-item" data-nav="market"><i class="fas fa-chart-pie"></i><span data-i18n="market">السوق</span></div>
+            <div class="nav-item" data-nav="vip"><i class="fas fa-crown"></i><span>VIP</span></div>
+            <div class="nav-item" data-nav="wallet"><i class="fas fa-wallet"></i><span data-i18n="wallet">المحفظة</span></div>
+            <div class="nav-item" data-nav="admin"><i class="fas fa-user-cog"></i><span data-i18n="admin">إدارة</span></div>
+        </div>
+
+        <!-- Modals as Bottom Sheets -->
+        <div class="modal" id="depositModal">
+            <div class="modal-sheet">
+                <div class="modal-sheet-handle"></div>
+                <div class="modal-header">
+                    <h2>إيداع العملات الرقمية</h2>
+                    <button class="close-modal" data-close="depositModal">&times;</button>
+                </div>
+                <div class="deposit-network-tabs">
+                    <button class="network-tab active" data-network="trc20">TRC20 (USDT)</button>
+                    <button class="network-tab" data-network="bep20">BEP20 (BSC)</button>
+                    <button class="network-tab" data-network="erc20">ERC20 (ETH)</button>
+                </div>
+                <div id="depositNetworkContent"></div>
+                <div class="warning-note">
+                    <i class="fas fa-exclamation-triangle" style="font-size:18px;"></i>
+                    <span>تأكد من اختيار الشبكة الصحيحة. إرسال العملات عبر شبكة خاطئة سيؤدي إلى فقدانها. الحد الأدنى للإيداع: 50 USDT.</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal" id="inviteModal">
+            <div class="modal-sheet">
+                <div class="modal-sheet-handle"></div>
+                <div class="modal-header"><h2 data-i18n="inviteFriends">دعوة الأصدقاء</h2><button class="close-modal" data-close="inviteModal">&times;</button></div>
+                <div>
+                    <label style="color:var(--text-muted);margin-bottom:4px;display:block;">رابط الإحالة</label>
+                    <div class="copy-field"><input type="text" id="referralLinkInput" readonly><button class="copy-btn" id="copyLinkBtn"><i class="far fa-copy"></i> نسخ</button></div>
+                    <label style="color:var(--text-muted);margin:14px 0 4px;display:block;">كود الإحالة</label>
+                    <div class="copy-field"><input type="text" id="referralCodeInput" readonly><button class="copy-btn" id="copyCodeBtn"><i class="far fa-copy"></i> نسخ</button></div>
+                    <div class="stats-row">
+                        <div><div class="stat-value" id="totalReferrals">0</div><div class="stat-label">إجمالي الإحالات</div></div>
+                        <div><div class="stat-value" id="totalRewards">$0.00</div><div class="stat-label">إجمالي المكافآت</div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal" id="withdrawModal">
+            <div class="modal-sheet">
+                <div class="modal-sheet-handle"></div>
+                <div class="modal-header"><h2 data-i18n="withdraw">سحب الأموال</h2><button class="close-modal" data-close="withdrawModal">&times;</button></div>
+                <div id="withdrawModalContent"></div>
+            </div>
+        </div>
+
+        <div class="modal" id="loginModal">
+            <div class="modal-sheet">
+                <div class="modal-sheet-handle"></div>
+                <div class="modal-header"><h2 data-i18n="welcomeBack">مرحباً بعودتك</h2><button class="close-modal" data-close="loginModal">&times;</button></div>
+                <div class="input-group"><label data-i18n="emailOrUsername">البريد الإلكتروني أو اسم المستخدم</label><input class="input-field" type="text" id="loginIdentifier" placeholder="example@mail.com"></div>
+                <div class="input-group"><label data-i18n="password">كلمة المرور</label><input class="input-field" type="password" id="loginPassword" placeholder="********"></div>
+                <div style="text-align:left;margin:6px 0 14px;"><span class="link" id="forgotPasswordLink">نسيت كلمة المرور؟</span></div>
+                <button class="btn-primary" style="width:100%;" id="loginSubmitBtn">تسجيل الدخول</button>
+                <div class="modal-footer"><span>ليس لديك حساب؟</span> <span class="link" id="switchToSignupLink">أنشئ حساباً هنا</span></div>
+            </div>
+        </div>
+
+        <div class="modal" id="signupModal">
+            <div class="modal-sheet">
+                <div class="modal-sheet-handle"></div>
+                <div class="modal-header"><h2 data-i18n="createAccount">إنشاء حساب</h2><button class="close-modal" data-close="signupModal">&times;</button></div>
+                <div class="double-input">
+                    <div class="input-group"><label>الاسم الأول</label><input class="input-field" type="text" id="firstName"></div>
+                    <div class="input-group"><label>اسم العائلة</label><input class="input-field" type="text" id="lastName"></div>
+                </div>
+                <div class="input-group"><label>اسم المستخدم</label><input class="input-field" type="text" id="username"></div>
+                <div class="input-group"><label>البريد الإلكتروني</label><input class="input-field" type="email" id="signupEmail"></div>
+                <div class="input-group"><label>كلمة المرور</label><input class="input-field" type="password" id="signupPassword"></div>
+                <div class="input-group"><label>رمز الدعوة</label><input class="input-field" type="text" id="inviteCode" placeholder="اختياري"></div>
+                <button class="btn-primary" style="width:100%;" id="signupSubmitBtn">إنشاء حساب</button>
+                <div class="modal-footer"><span>لديك حساب بالفعل؟</span> <span class="link" id="switchToLoginLink">تسجيل الدخول</span></div>
+            </div>
+        </div>
+
+        <div class="modal" id="forgotPasswordModal">
+            <div class="modal-sheet">
+                <div class="modal-sheet-handle"></div>
+                <div class="modal-header"><h2>استعادة كلمة المرور</h2><button class="close-modal" data-close="forgotPasswordModal">&times;</button></div>
+                <div id="forgotStep1">
+                    <div class="input-group"><label>البريد الإلكتروني المسجل</label><input class="input-field" type="email" id="forgotEmail"></div>
+                    <div class="input-group"><label>كلمة المرور الحالية</label><input class="input-field" type="password" id="currentPasswordCheck"></div>
+                    <button class="btn-primary" style="width:100%;" id="verifyCurrentPasswordBtn">تحقق واستمر</button>
+                </div>
+                <div id="forgotStep2" style="display:none;">
+                    <div class="input-group"><label>كلمة المرور الجديدة</label><input class="input-field" type="password" id="newPasswordForgot"></div>
+                    <div class="input-group"><label>تأكيد كلمة المرور</label><input class="input-field" type="password" id="confirmNewPasswordForgot"></div>
+                    <div class="captcha-box">
+                        <canvas id="captchaCanvas" class="captcha-canvas" width="100" height="40"></canvas>
+                        <i class="fas fa-sync-alt link" id="refreshCaptchaBtn" style="padding:8px;"></i>
+                        <input class="input-field" type="text" id="captchaInput" placeholder="أدخل الأرقام" style="flex:1;">
+                    </div>
+                    <button class="btn-primary" style="width:100%;margin-top:12px;" id="resetPasswordFinalBtn">تغيير كلمة المرور</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal" id="supportModal">
+            <div class="modal-sheet">
+                <div class="modal-sheet-handle"></div>
+                <div class="modal-header"><h2>الدعم الفني</h2><button class="close-modal" data-close="supportModal">&times;</button></div>
+                <p>يمكنك التواصل مع فريق الدعم عبر:</p>
+                <p style="margin-top:10px;"><i class="fas fa-envelope"></i> support@pocket24.com</p>
+                <p><i class="fab fa-telegram"></i> @Pocket24_Support</p>
+            </div>
+        </div>
+
+        <div class="modal" id="legalModal">
+            <div class="modal-sheet">
+                <div class="modal-sheet-handle"></div>
+                <div class="modal-header"><h2>الشروط والأحكام</h2><button class="close-modal" data-close="legalModal">&times;</button></div>
+                <div id="legalModalContent" style="line-height:1.7;font-size:14px;"></div>
+            </div>
+        </div>
+
+        <div class="modal" id="personalInfoModal">
+            <div class="modal-sheet">
+                <div class="modal-sheet-handle"></div>
+                <div class="modal-header"><h2>الحلقة الشخصية</h2><button class="close-modal" data-close="personalInfoModal">&times;</button></div>
+                <div id="personalInfoContent"></div>
+            </div>
+        </div>
+
+        <div class="modal" id="notificationsModal">
+            <div class="modal-sheet">
+                <div class="modal-sheet-handle"></div>
+                <div class="modal-header"><h2>سجل المعاملات</h2><button class="close-modal" data-close="notificationsModal">&times;</button></div>
+                <div id="notificationsContent" style="max-height:350px;overflow-y:auto;"></div>
+            </div>
+        </div>
+    </div>
+
+    <div id="toastContainer" class="toast-container"></div>
+
+    <script>
+        (function() {
+            // ==================== NATIVE SPLASH ====================
+            const nativeSplash = document.getElementById('nativeSplash');
+            const appContainer = document.getElementById('appContainer');
+
+            function hideSplash() {
+                if (nativeSplash && !nativeSplash.classList.contains('hidden')) {
+                    nativeSplash.classList.add('hidden');
+                    setTimeout(() => { if (nativeSplash.parentNode) nativeSplash.remove(); }, 600);
+                }
+            }
+
+            // ==================== PWA MANIFEST ====================
+            const manifestData = {
+                name: "Pocket24 - منصة تداول العقود الآجلة والفوركس",
+                short_name: "Pocket24",
+                description: "تداول العقود الآجلة والفوركس باحترافية",
+                start_url: location.href.split('?')[0],
+                display: "standalone",
+                background_color: "#0f172a",
+                theme_color: "#0f172a",
+                orientation: "portrait-primary",
+                lang: "ar",
+                dir: "rtl",
+                scope: location.href.split('?')[0],
+                icons: [{
+                    src: "data:image/svg+xml," + encodeURIComponent(
+                        "<svg xmlns='http://www.w3.org/2000/svg' width='192' height='192' viewBox='0 0 192 192'><rect width='192' height='192' rx='40' fill='%230f172a'/><text x='96' y='120' font-family='Arial' font-size='90' font-weight='bold' fill='%233b82f6' text-anchor='middle'>P</text><text x='96' y='155' font-family='Arial' font-size='28' font-weight='bold' fill='%233b82f6' text-anchor='middle'>24</text></svg>"
+                        ),
+                    sizes: "192x192",
+                    type: "image/svg+xml",
+                    purpose: "any maskable"
+                }, {
+                    src: "data:image/svg+xml," + encodeURIComponent(
+                        "<svg xmlns='http://www.w3.org/2000/svg' width='512' height='512' viewBox='0 0 512 512'><rect width='512' height='512' rx='100' fill='%230f172a'/><text x='256' y='320' font-family='Arial' font-size='240' font-weight='bold' fill='%233b82f6' text-anchor='middle'>P</text><text x='256' y='410' font-family='Arial' font-size='70' font-weight='bold' fill='%233b82f6' text-anchor='middle'>24</text></svg>"
+                        ),
+                    sizes: "512x512",
+                    type: "image/svg+xml",
+                    purpose: "any maskable"
+                }],
+                categories: ["finance", "business"]
+            };
+
+            const manifestBlob = new Blob([JSON.stringify(manifestData)], { type: 'application/json' });
+            const manifestURL = URL.createObjectURL(manifestBlob);
+            const manifestLink = document.createElement('link');
+            manifestLink.rel = 'manifest';
+            manifestLink.href = manifestURL;
+            document.head.appendChild(manifestLink);
+
+            // Service Worker
+            if ('serviceWorker' in navigator) {
+                const swCode = `
+                    const CACHE_NAME='pocket24-v3';
+                    self.addEventListener('install',e=>{e.waitUntil(self.skipWaiting())});
+                    self.addEventListener('activate',e=>{e.waitUntil(self.clients.claim())});
+                    self.addEventListener('fetch',e=>{
+                        if(e.request.method!=='GET')return;
+                        e.respondWith(fetch(e.request).catch(()=>new Response('Offline',{status:503})));
+                    });
+                `;
+                const swBlob = new Blob([swCode], { type: 'application/javascript' });
+                navigator.serviceWorker.register(URL.createObjectURL(swBlob), { scope: '/' }).catch(() => {});
+            }
+
+            // ==================== TRANSLATIONS ====================
+            const translations = {
+                ar: {
+                    appName: 'Pocket24',
+                    welcomeSlogan: 'تداول العقود الآجلة والفوركس باحترافية',
+                    login: 'تسجيل الدخول',
+                    signup: 'إنشاء حساب جديد',
+                    trustedPlatform: 'Pocket24 · منصة تداول موثوقة',
+                    connected: 'متصل',
+                    disconnected: 'غير متصل',
+                    totalWallet: 'إجمالي المحفظة',
+                    margin: 'الهامش',
+                    addFunds: 'إضافة أموال',
+                    viewWallet: 'عرض المحفظة',
+                    startTrade: 'ابدأ التداول',
+                    openFutures: 'افتح أول صفحة عقود آجلة الآن',
+                    invite: 'دعوة',
+                    withdraw: 'سحب',
+                    trade: 'تداول',
+                    deposit: 'إيداع',
+                    marketPrices: 'أسعار السوق',
+                    home: 'الرئيسية',
+                    market: 'السوق',
+                    wallet: 'المحفظة',
+                    admin: 'إدارة',
+                },
+                en: {
+                    appName: 'Pocket24',
+                    welcomeSlogan: 'Trade futures & forex professionally',
+                    login: 'Log in',
+                    signup: 'Sign up',
+                    trustedPlatform: 'Pocket24 · Trusted trading platform',
+                    connected: 'Connected',
+                    disconnected: 'Disconnected',
+                    totalWallet: 'Total wallet',
+                    margin: 'Margin',
+                    addFunds: 'Add funds',
+                    viewWallet: 'View wallet',
+                    startTrade: 'Start trading',
+                    openFutures: 'Open futures now',
+                    invite: 'Invite',
+                    withdraw: 'Withdraw',
+                    trade: 'Trade',
+                    deposit: 'Deposit',
+                    marketPrices: 'Market prices',
+                    home: 'Home',
+                    market: 'Market',
+                    wallet: 'Wallet',
+                    admin: 'Settings',
+                },
+                fr: {
+                    appName: 'Pocket24',
+                    welcomeSlogan: 'Tradez les futures et le forex',
+                    login: 'Connexion',
+                    signup: 'S\'inscrire',
+                    trustedPlatform: 'Pocket24 · Plateforme de confiance',
+                    connected: 'Connecté',
+                    disconnected: 'Déconnecté',
+                    totalWallet: 'Portefeuille total',
+                    margin: 'Marge',
+                    addFunds: 'Ajouter des fonds',
+                    viewWallet: 'Voir portefeuille',
+                    startTrade: 'Commencer à trader',
+                    openFutures: 'Ouvrir futures',
+                    invite: 'Inviter',
+                    withdraw: 'Retirer',
+                    trade: 'Trader',
+                    deposit: 'Déposer',
+                    marketPrices: 'Prix du marché',
+                    home: 'Accueil',
+                    market: 'Marché',
+                    wallet: 'Portefeuille',
+                    admin: 'Paramètres',
+                }
+            };
+
+            let currentLang = localStorage.getItem('pocket24_lang') || 'ar';
+            let darkMode = localStorage.getItem('pocket24_dark_mode') === 'true';
+
+            function applyDarkMode() {
+                document.body.classList.toggle('dark-mode', darkMode);
+                const toggle = document.getElementById('darkModeToggle');
+                if (toggle) toggle.checked = darkMode;
+                const meta = document.querySelector('meta[name="theme-color"]');
+                if (meta) meta.content = darkMode ? '#0f172a' : '#ffffff';
+            }
+
+            function updateOnlineStatus() {
+                const dot = document.getElementById('connectionDot');
+                const text = document.getElementById('connectionText');
+                if (navigator.onLine) {
+                    if (dot) { dot.classList.remove('offline'); }
+                    if (text) text.textContent = t('connected');
+                } else {
+                    if (dot) { dot.classList.add('offline'); }
+                    if (text) text.textContent = t('disconnected');
+                }
+            }
+            window.addEventListener('online', updateOnlineStatus);
+            window.addEventListener('offline', updateOnlineStatus);
+
+            function t(key) {
+                const keys = key.split('.');
+                let val = translations[currentLang];
+                for (let k of keys) {
+                    if (val && typeof val === 'object') val = val[k];
+                    else return key;
+                }
+                return val || key;
+            }
+
+            function applyLanguageToDOM() {
+                document.documentElement.lang = currentLang;
+                document.documentElement.dir = currentLang === 'ar' ? 'rtl' : 'ltr';
+                document.querySelectorAll('[data-i18n]').forEach(el => {
+                    if (!(el.tagName === 'INPUT' && (el.type === 'text' || el.type === 'email' || el.type ===
+                            'password')))
+                        el.textContent = t(el.getAttribute('data-i18n'));
+                });
+                document.querySelectorAll('.lang-btn').forEach(btn => {
+                    btn.classList.toggle('active', btn.getAttribute('data-lang') === currentLang);
+                });
+                updateOnlineStatus();
+            }
+
+            function setLanguage(lang) {
+                if (lang === currentLang) return;
+                currentLang = lang;
+                localStorage.setItem('pocket24_lang', lang);
+                if (isLoggedIn()) logout(true);
+                applyLanguageToDOM();
+                showWelcomeScreen();
+            }
+
+            function showToast(msg, isDynamic = false) {
+                const container = document.getElementById('toastContainer');
+                const toast = document.createElement('div');
+                toast.className = 'toast-message';
+                toast.textContent = isDynamic ? msg : (t('toast.' + msg) || msg);
+                container.appendChild(toast);
+                setTimeout(() => { if (toast.parentNode) toast.remove(); }, 3200);
+            }
+
+            // Ripple effect
+            function addRipple(e, el) {
+                const ripple = document.createElement('span');
+                ripple.className = 'ripple';
+                const rect = el.getBoundingClientRect();
+                const size = Math.max(rect.width, rect.height);
+                ripple.style.width = ripple.style.height = size + 'px';
+                ripple.style.left = (e.clientX || (e.touches && e.touches[0].clientX) || rect.left + rect.width / 2) - rect
+                    .left - size / 2 + 'px';
+                ripple.style.top = (e.clientY || (e.touches && e.touches[0].clientY) || rect.top + rect.height / 2) - rect.top -
+                    size / 2 + 'px';
+                el.style.position = el.style.position || 'relative';
+                el.style.overflow = 'hidden';
+                el.appendChild(ripple);
+                setTimeout(() => { if (ripple.parentNode) ripple.remove(); }, 600);
+            }
+
+            document.addEventListener('click', function(e) {
+                const btn = e.target.closest(
+                    'button, .quick-item, .start-trade-card, .market-row, .admin-menu-item, .nav-item, .vip-subscribe-btn'
+                    );
+                if (btn && !e.target.closest('.close-modal') && !e.target.closest('.toggle-switch')) {
+                    addRipple(e, btn);
+                }
+            });
+
+            // ==================== STORAGE ====================
+            const STORAGE_KEYS = { ACCOUNT: 'pocket24_user_account', SESSION: 'pocket24_logged_in',
+                REFERRAL_STATS: 'pocket24_referral_stats', BALANCE_HIDDEN: 'pocket24_balance_hidden' };
+            const welcomeScreen = document.getElementById('welcomeScreen'),
+                mainApp = document.getElementById('mainApp'),
+                tradePage = document.getElementById('tradePage'),
+                walletPage = document.getElementById('walletPage'),
+                marketPage = document.getElementById('marketPage'),
+                adminPage = document.getElementById('adminPage'),
+                vipPage = document.getElementById('vipPage'),
+                bottomNav = document.getElementById('bottomNav');
+
+            function showBottomNav() { if (bottomNav) bottomNav.classList.add('visible'); }
+
+            function hideBottomNav() { if (bottomNav) bottomNav.classList.remove('visible'); }
+
+            function hideAllPages() {
+                [welcomeScreen, mainApp, tradePage, walletPage, marketPage, adminPage, vipPage].forEach(p => {
+                    if (p) { p.style.display = 'none';
+                        p.classList.remove('active', 'page-slide-out'); }
+                });
+            }
+
+            function showWelcomeScreen() {
+                hideAllPages();
+                hideBottomNav();
+                if (welcomeScreen) welcomeScreen.style.display = 'flex';
+                closeAllModals();
+                updateOnlineStatus();
+            }
+
+            function setActiveNav(navName) {
+                document.querySelectorAll('#bottomNav .nav-item').forEach(n => n.classList.remove('active'));
+                const target = document.querySelector(`#bottomNav .nav-item[data-nav="${navName}"]`);
+                if (target) target.classList.add('active');
+            }
+
+            function navigateTo(pageEl, navName) {
+                hideAllPages();
+                if (pageEl) {
+                    pageEl.style.display = 'flex';
+                    pageEl.classList.add('active');
+                }
+                showBottomNav();
+                if (navName) setActiveNav(navName);
+                updateOnlineStatus();
+                // Scroll to top
+                const scrollArea = pageEl?.querySelector('.page-scroll-area, .wallet-page-content, .market-page-content, .admin-page-content, .vip-page-content');
+                if (scrollArea) scrollArea.scrollTop = 0;
+            }
+
+            function showMainApp() {
+                navigateTo(mainApp, 'home');
+                updateBalanceDisplay();
+                populateHomeMarketList();
+            }
+
+            function closeModal(modal) { if (modal) modal.classList.remove('show'); }
+
+            function openModal(modal) { if (modal) modal.classList.add('show'); }
+
+            function closeAllModals() { document.querySelectorAll('.modal').forEach(m => m.classList.remove('show')); }
+
+            let balanceHidden = JSON.parse(localStorage.getItem(STORAGE_KEYS.BALANCE_HIDDEN) || 'false');
+
+            const FIXED_DEPOSIT_ADDRESSES = {
+                trc20: 'TBdfQu4Rw3x6v1Fc75mw51J2R1d6zykaaq',
+                bep20: '0x95d260eb8c51ca2fffb818d9a9da779a41380a53',
+                erc20: '0x95d260eb8c51ca2fffb818d9a9da779a41380a53'
+            };
+
+            function getSavedAccount() {
+                const acc = localStorage.getItem(STORAGE_KEYS.ACCOUNT);
+                if (!acc) return null;
+                try { return JSON.parse(acc); } catch (e) { return null; }
+            }
+
+            function saveAccount(account) {
+                if (account && account.balance === undefined) account.balance = 0.00;
+                if (account && account.totalDeposits === undefined) account.totalDeposits = 0.00;
+                if (account && account.todayProfit === undefined) account.todayProfit = 0.00;
+                if (account && account.availableBalance === undefined) account.availableBalance = account.balance || 0.00;
+                if (account && account.frozenBalance === undefined) account.frozenBalance = 0.00;
+                localStorage.setItem(STORAGE_KEYS.ACCOUNT, JSON.stringify(account));
+            }
+
+            function isLoggedIn() { return localStorage.getItem(STORAGE_KEYS.SESSION) === 'true'; }
+
+            function setLoggedIn(state) { localStorage.setItem(STORAGE_KEYS.SESSION, state ? 'true' : 'false'); }
+
+            function getReferralStats() { return JSON.parse(localStorage.getItem(STORAGE_KEYS.REFERRAL_STATS) ||
+                    '{"total":0,"rewards":0,"l1":0,"l2":0,"l3":0}'); }
+
+            function saveReferralStats(stats) { localStorage.setItem(STORAGE_KEYS.REFERRAL_STATS, JSON.stringify(stats)); }
+
+            function generateUserId() { return Math.floor(10000000 + Math.random() * 90000000).toString(); }
+
+            function generateReferralCode() {
+                const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+                let code = '';
+                for (let i = 0; i < 8; i++) code += chars.charAt(Math.floor(Math.random() * chars.length));
+                return code;
+            }
+
+            function ensureDepositAddresses(account) {
+                if (!account.depositAddresses) { account.depositAddresses = { ...FIXED_DEPOSIT_ADDRESSES };
+                    saveAccount(account); }
+                return account.depositAddresses;
+            }
+
+            function updateBalanceDisplay() {
+                const acc = getSavedAccount();
+                const mainEl = document.getElementById('mainWalletBalanceDisplay');
+                const totalBalance = acc ? (acc.balance || 0) : 0;
+                if (mainEl) mainEl.textContent = balanceHidden ? '****' : '$' + totalBalance.toFixed(2);
+                const eyeIcon = document.getElementById('toggleMainBalanceEye');
+                if (eyeIcon) eyeIcon.className = balanceHidden ? 'fas fa-eye-slash eye-icon' : 'fas fa-eye eye-icon';
+                localStorage.setItem(STORAGE_KEYS.BALANCE_HIDDEN, balanceHidden);
+                renderWalletTabContent();
+            }
+
+            function enterMainApp() {
+                setLoggedIn(true);
+                const acc = getSavedAccount();
+                if (acc) {
+                    if (!acc.referralCode) { acc.referralCode = generateReferralCode();
+                        acc.referralLink = `https://pocket24.com/ref/${acc.referralCode}`; }
+                    if (!acc.userId) acc.userId = generateUserId();
+                    ensureDepositAddresses(acc);
+                    // Ensure new fields exist
+                    if (acc.totalDeposits === undefined) acc.totalDeposits = 0.00;
+                    if (acc.todayProfit === undefined) acc.todayProfit = 0.00;
+                    if (acc.availableBalance === undefined) acc.availableBalance = acc.balance || 0.00;
+                    if (acc.frozenBalance === undefined) acc.frozenBalance = 0.00;
+                    if (!localStorage.getItem(STORAGE_KEYS.REFERRAL_STATS)) saveReferralStats({ total: 0, rewards: 0,
+                        l1: 0, l2: 0, l3: 0 });
+                    saveAccount(acc);
+                }
+                applyLanguageToDOM();
+                updateInviteModalContent();
+                showMainApp();
+            }
+
+            function logout(skipLangUpdate = false) {
+                setLoggedIn(false);
+                if (!skipLangUpdate) applyLanguageToDOM();
+                showWelcomeScreen();
+            }
+
+            function updateInviteModalContent() {
+                const acc = getSavedAccount();
+                if (!acc) return;
+                const stats = getReferralStats();
+                const refLinkInput = document.getElementById('referralLinkInput');
+                if (refLinkInput) refLinkInput.value = acc.referralLink ||
+                    `https://pocket24.com/ref/${acc.referralCode || 'DEMO'}`;
+                const refCodeInput = document.getElementById('referralCodeInput');
+                if (refCodeInput) refCodeInput.value = acc.referralCode || 'POCKET24DEMO';
+                const totalRefEl = document.getElementById('totalReferrals');
+                if (totalRefEl) totalRefEl.innerText = stats.total || 0;
+                const totalRewardsEl = document.getElementById('totalRewards');
+                if (totalRewardsEl) totalRewardsEl.innerText = `$${(stats.rewards || 0).toFixed(2)}`;
+            }
+
+            let currentDepositNetwork = 'trc20';
+
+            function updateDepositModalContent() {
+                const acc = getSavedAccount();
+                if (!acc) return;
+                const addresses = ensureDepositAddresses(acc);
+                const contentDiv = document.getElementById('depositNetworkContent');
+                if (!contentDiv) return;
+                const network = currentDepositNetwork;
+                const displayAddress = addresses[network];
+                const qrUrl =
+                    `https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=${encodeURIComponent(displayAddress)}`;
+                contentDiv.innerHTML = `
+                    <div style="text-align:center;">
+                        <div style="color:var(--text-muted);margin-bottom:8px;">شبكة ${network.toUpperCase()}</div>
+                        <div class="address-qr-placeholder"><img src="${qrUrl}" alt="QR" class="qr-code-img"></div>
+                        <div class="address-text">${displayAddress}</div>
+                        <button class="btn-secondary" id="copyDepositAddressBtn" style="width:100%;">نسخ العنوان</button>
+                    </div>`;
+                document.getElementById('copyDepositAddressBtn')?.addEventListener('click', () => {
+                    navigator.clipboard?.writeText(displayAddress);
+                    showToast('تم نسخ عنوان الإيداع!', true);
+                });
+                document.querySelectorAll('#depositModal .network-tab').forEach(tab => tab.classList.toggle(
+                    'active', tab.dataset.network === network));
+                document.querySelectorAll('#depositNetworkContent .network-tab').forEach(tab => tab.classList
+                    .toggle('active', tab.dataset.network === network));
+            }
+
+            function canCreateAccount() { return getSavedAccount() === null; }
+
+            // ==================== CHART ====================
+            let forexChartInstance = null;
+            let currentResolution = '1';
+
+            function generateForexData(resolution) {
+                const now = Date.now();
+                const count = 50;
+                const labels = [];
+                const prices = [];
+                let basePrice = 1.0850;
+                const volatility = resolution === '1' ? 0.0005 : (resolution === '5' ? 0.001 : 0.002);
+                for (let i = count; i >= 0; i--) {
+                    labels.push(new Date(now - i * parseInt(resolution) * 60000).toLocaleTimeString([], { hour: '2-digit',
+                        minute: '2-digit' }));
+                    basePrice += (Math.random() - 0.5) * volatility;
+                    prices.push(basePrice);
+                }
+                const priceDisplay = document.getElementById('chartPriceDisplay');
+                if (priceDisplay) priceDisplay.textContent = basePrice.toFixed(5);
+                return { labels, prices };
+            }
+
+            function createForexChart(resolution) {
+                const ctx = document.getElementById('forexChart')?.getContext('2d');
+                if (!ctx) return;
+                if (forexChartInstance) forexChartInstance.destroy();
+                const data = generateForexData(resolution);
+                const isDark = darkMode;
+                forexChartInstance = new Chart(ctx, {
+                    type: 'line',
+                    data: {
+                        labels: data.labels,
+                        datasets: [{ label: 'EUR/USD', data: data.prices, borderColor: '#2563eb',
+                            backgroundColor: 'rgba(37,99,235,0.08)', tension: 0.25, fill: true,
+                            pointRadius: 0, borderWidth: 2.5 }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: { legend: { display: false } },
+                        scales: {
+                            x: { grid: { color: isDark ? '#1e3a5f' : '#e2e8f0' }, ticks: { color: isDark ?
+                                        '#94a3b8' : '#64748b', font: { size: 10 } } },
+                            y: { grid: { color: isDark ? '#1e3a5f' : '#e2e8f0' }, ticks: { color: isDark ?
+                                        '#94a3b8' : '#64748b', font: { size: 10 } } }
+                        }
+                    }
+                });
+            }
+
+            function openTradePage() {
+                if (!isLoggedIn()) { openModal(document.getElementById('loginModal')); return; }
+                navigateTo(tradePage, '');
+                setActiveNav('');
+                setTimeout(() => createForexChart(currentResolution), 300);
+            }
+
+            function setChartResolution(resolution) {
+                currentResolution = resolution;
+                createForexChart(resolution);
+                document.querySelectorAll('.tf-btn').forEach(btn => btn.classList.toggle('active', btn.dataset.tf ===
+                    resolution));
+            }
+
+            const top10Coins = [
+                { name: 'Bitcoin', symbol: 'BTC', price: 67842.00, change: '+0.7%', icon: 'fab fa-bitcoin',
+                    color: '#f7931a' },
+                { name: 'Ethereum', symbol: 'ETH', price: 3210.80, change: '+1.8%', icon: 'fab fa-ethereum',
+                    color: '#6b8cff' },
+                { name: 'BNB', symbol: 'BNB', price: 580.32, change: '-0.3%', icon: 'fas fa-coins', color: '#f0b90b' },
+                { name: 'Solana', symbol: 'SOL', price: 142.35, change: '+2.4%', icon: 'fas fa-bolt', color: '#9f7aea' },
+                { name: 'XRP', symbol: 'XRP', price: 0.587, change: '+0.2%', icon: 'fas fa-water', color: '#22c55e' },
+                { name: 'Cardano', symbol: 'ADA', price: 0.455, change: '-1.1%', icon: 'fas fa-circle',
+                color: '#3b82f6' },
+                { name: 'Dogecoin', symbol: 'DOGE', price: 0.142, change: '+5.2%', icon: 'fas fa-dog',
+                color: '#fbbf24' },
+                { name: 'Avalanche', symbol: 'AVAX', price: 35.67, change: '+0.9%', icon: 'fas fa-mountain',
+                    color: '#e84142' },
+                { name: 'Polkadot', symbol: 'DOT', price: 6.82, change: '-0.7%', icon: 'fas fa-circle-nodes',
+                    color: '#e6007a' },
+                { name: 'Polygon', symbol: 'MATIC', price: 0.789, change: '+1.3%', icon: 'fas fa-polygon',
+                    color: '#8247e5' }
+            ];
+
+            function populateHomeMarketList() {
+                const container = document.getElementById('homeMarketList');
+                if (!container) return;
+                container.innerHTML = '';
+                top10Coins.slice(0, 3).forEach(c => {
+                    const row = document.createElement('div');
+                    row.className = 'market-row';
+                    row.innerHTML =
+                        `<div class="coin-info"><div class="coin-icon" style="background:#f1f5f9;color:${c.color};"><i class="${c.icon}"></i> ${c.symbol}</div><span>${c.name}</span></div><div><div class="coin-price">$${c.price.toLocaleString()}</div><div class="coin-change" style="color:${c.change.startsWith('+')?'#22c55e':'#ef4444'};">${c.change}</div></div>`;
+                    container.appendChild(row);
+                });
+            }
+
+            function populateFullMarketList() {
+                const container = document.getElementById('fullMarketCoinList');
+                if (!container) return;
+                container.innerHTML = '';
+                top10Coins.forEach((coin, i) => {
+                    const row = document.createElement('div');
+                    row.className = 'market-coin-row-enhanced';
+                    const isPos = coin.change.startsWith('+');
+                    row.innerHTML = `
+                        <div style="display:flex;align-items:center;gap:8px;"><div class="coin-icon" style="background:#f1f5f9;color:${coin.color};"><i class="${coin.icon}"></i></div><span style="font-weight:600;">${coin.symbol}</span></div>
+                        <div class="sparkline-container"><canvas id="spark-${i}" width="70" height="26"></canvas></div>
+                        <div><div class="coin-price">$${coin.price.toLocaleString()}</div><div style="color:${isPos?'#22c55e':'#ef4444'};font-size:12px;">${coin.change}</div></div>`;
+                    container.appendChild(row);
+                    const canvas = document.getElementById(`spark-${i}`);
+                    if (canvas) {
+                        const sparkData = Array.from({ length: 20 }, () => coin.price * (1 + (Math.random() -
+                            0.5) * 0.02));
+                        new Chart(canvas.getContext('2d'), { type: 'line', data: { labels: Array(20).fill(''),
+                                datasets: [{ data: sparkData, borderColor: isPos ? '#22c55e' :
+                                    '#ef4444', borderWidth: 1.5, pointRadius: 0, tension: 0.3,
+                                    fill: false
+                                }] }, options: { responsive: true,
+                                maintainAspectRatio: false, plugins: { legend: { display: false },
+                                    tooltip: { enabled: false } }, scales: { x: { display: false },
+                                    y: { display: false } } } });
+                    }
+                });
+            }
+
+            function openMarketPage() {
+                if (!isLoggedIn()) { openModal(document.getElementById('loginModal')); return; }
+                navigateTo(marketPage, 'market');
+                populateFullMarketList();
+            }
+
+            function openAdminPage() {
+                if (!isLoggedIn()) { openModal(document.getElementById('loginModal')); return; }
+                navigateTo(adminPage, 'admin');
+                const acc = getSavedAccount();
+                if (acc) {
+                    document.getElementById('adminDisplayName').innerText = acc.firstName + ' ' + acc.lastName;
+                    document.getElementById('adminUserBadge').innerText = (currentLang === 'ar' ? 'عميل مميز' : (
+                        currentLang === 'en' ? 'Premium Client' : 'Client Premium'));
+                }
+            }
+
+            function renderWithdrawForm(containerElement) {
+                const container = typeof containerElement === 'string' ? document.getElementById(containerElement) :
+                    containerElement;
+                if (!container) return;
+                const acc = getSavedAccount();
+                const available = acc ? (acc.availableBalance || 0) : 0;
+                container.innerHTML = `
+                    <div style="margin-bottom:14px;display:flex;justify-content:space-between;"><span style="color:var(--text-muted);">الرصيد المتاح</span><span style="font-weight:700;">${balanceHidden?'****':'$'+available.toFixed(2)}</span></div>
+                    <div class="withdraw-network-tabs">
+                        <button class="network-tab active" data-wd-network="trc20">TRC20</button>
+                        <button class="network-tab" data-wd-network="bep20">BEP20</button>
+                        <button class="network-tab" data-wd-network="erc20">ERC20</button>
+                    </div>
+                    <div class="input-group"><label>المبلغ (USDT)</label><input class="input-field" type="number" id="withdrawAmountInput" placeholder="0.00" min="10"></div>
+                    <div class="input-group"><label id="withdrawAddressLabel">عنوان المحفظة (TRC20)</label><input class="input-field" type="text" id="withdrawAddressInput" placeholder="T..."></div>
+                    <button class="btn-primary" style="width:100%;" id="submitWithdrawActionBtn">طلب السحب</button>
+                    <p class="text-muted mt-2" style="font-size:12px;">الحد الأدنى: 10 USDT</p>`;
+                let currentNetwork = 'trc20';
+                container.querySelectorAll('[data-wd-network]').forEach(tab => {
+                    tab.addEventListener('click', function() {
+                        container.querySelectorAll('[data-wd-network]').forEach(t => t.classList
+                            .remove('active'));
+                        this.classList.add('active');
+                        currentNetwork = this.dataset.wdNetwork;
+                        document.getElementById('withdrawAddressLabel').textContent =
+                            `عنوان المحفظة (${currentNetwork.toUpperCase()})`;
+                        document.getElementById('withdrawAddressInput').placeholder = currentNetwork ===
+                            'trc20' ? 'T...' : '0x...';
+                    });
+                });
+                document.getElementById('submitWithdrawActionBtn').addEventListener('click', () => {
+                    const amount = document.getElementById('withdrawAmountInput').value;
+                    const address = document.getElementById('withdrawAddressInput').value.trim();
+                    if (!amount || parseFloat(amount) < 10) { showToast('الحد الأدنى للسحب 10 USDT', true); return; }
+                    if (!address) { showToast('يرجى إدخال عنوان المحفظة', true); return; }
+                    showToast('تم تقديم طلب السحب بنجاح!', true);
+                    closeModal(document.getElementById('withdrawModal'));
+                });
+            }
+
+            function openWalletPage() {
+                if (!isLoggedIn()) { openModal(document.getElementById('loginModal')); return; }
+                navigateTo(walletPage, 'wallet');
+                renderWalletTabContent();
+            }
+
+            function renderWalletTabContent() {
+                const activeTab = document.querySelector('.wallet-tab.active')?.dataset.walletTab || 'overview';
+                const container = document.getElementById('walletTabContent');
+                if (!container) return;
+                const acc = getSavedAccount();
+                const hidden = balanceHidden;
+                const totalBalance = acc ? (acc.balance || 0) : 0;
+                const totalDeposits = acc ? (acc.totalDeposits || 0) : 0;
+                const todayProfit = acc ? (acc.todayProfit || 0) : 0;
+                const availableBalance = acc ? (acc.availableBalance || 0) : 0;
+                const frozenBalance = acc ? (acc.frozenBalance || 0) : 0;
+
+                if (activeTab === 'overview') {
+                    container.innerHTML = `
+                        <div class="overview-card">
+                            <div style="display:flex;justify-content:space-between;align-items:center;">
+                                <span style="color:var(--text-muted);">إجمالي الرصيد</span>
+                                <i class="fas ${hidden?'fa-eye-slash':'fa-eye'} eye-icon" id="overviewToggleEye"></i>
+                            </div>
+                            <div class="overview-amount">${hidden?'****':'$'+totalBalance.toFixed(2)}</div>
+                            <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:14px;">
+                                <div style="background:var(--stat-bg);border-radius:14px;padding:12px;border:1px solid var(--border-color);">
+                                    <div style="font-size:12px;color:var(--text-muted);">إجمالي الإيداعات</div>
+                                    <div style="font-weight:700;color:var(--text-primary);margin-top:4px;">${hidden?'****':'$'+totalDeposits.toFixed(2)}</div>
+                                </div>
+                                <div style="background:var(--stat-bg);border-radius:14px;padding:12px;border:1px solid var(--border-color);">
+                                    <div style="font-size:12px;color:var(--text-muted);">أرباح اليوم</div>
+                                    <div style="font-weight:700;color:#22c55e;margin-top:4px;">${hidden?'****':'$'+todayProfit.toFixed(2)}</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;">
+                            <div class="colorful-item" style="border-right-color:#3b82f6;">
+                                <div style="font-size:12px;color:var(--text-muted);">الرصيد المتاح</div>
+                                <div style="color:#60a5fa;font-weight:700;">${hidden?'****':'$'+availableBalance.toFixed(2)}</div>
+                            </div>
+                            <div class="colorful-item" style="border-right-color:#ef4444;">
+                                <div style="font-size:12px;color:var(--text-muted);">الرصيد المجمد</div>
+                                <div style="color:#f87171;font-weight:700;">${hidden?'****':'$'+frozenBalance.toFixed(2)}</div>
+                            </div>
+                        </div>`;
+                    document.getElementById('overviewToggleEye')?.addEventListener('click', () => {
+                        balanceHidden = !balanceHidden;
+                        updateBalanceDisplay();
+                    });
+                } else if (activeTab === 'deposit') {
+                    currentDepositNetwork = 'trc20';
+                    container.innerHTML = `<div id="walletDepositContainer"></div>`;
+                    document.getElementById('walletDepositContainer').innerHTML = document.getElementById(
+                        'depositModal').querySelector('.modal-sheet').innerHTML;
+                    updateDepositModalContent();
+                } else if (activeTab === 'withdraw') {
+                    container.innerHTML = `<div id="walletWithdrawContainer"></div>`;
+                    renderWithdrawForm(document.getElementById('walletWithdrawContainer'));
+                } else if (activeTab === 'transfer') {
+                    container.innerHTML = `
+                        <div class="input-group"><label>المستلم</label><input class="input-field" id="transferRecipient" placeholder="معرف أو اسم مستخدم"></div>
+                        <div class="input-group"><label>المبلغ</label><input class="input-field" type="number" id="transferAmount" placeholder="0.00"></div>
+                        <div class="input-group"><label>كلمة المرور</label><input class="input-field" type="password" id="transferPassword"></div>
+                        <button class="btn-primary" style="width:100%;" id="submitInternalTransfer">تحويل</button>`;
+                    document.getElementById('submitInternalTransfer')?.addEventListener('click', () => {
+                        if (!document.getElementById('transferPassword').value) { showToast(
+                                'كلمة المرور مطلوبة', true); return; }
+                        showToast('تم التحويل بنجاح!', true);
+                    });
+                } else if (activeTab === 'history') {
+                    container.innerHTML = `<div style="text-align:center;padding:30px;color:var(--text-muted);"><i class="fas fa-history" style="font-size:28px;margin-bottom:10px;opacity:0.5;"></i><p>لا توجد معاملات</p></div>`;
+                }
+            }
+
+            function openPersonalInfoModal() {
+                const acc = getSavedAccount();
+                if (!acc) return;
+                document.getElementById('personalInfoContent').innerHTML = `
+                    <div style="background:var(--input-bg);padding:14px;border-radius:14px;margin-bottom:12px;">
+                        <div style="color:var(--text-muted);font-size:13px;">اسم المستخدم</div>
+                        <div style="display:flex;justify-content:space-between;align-items:center;"><span>${acc.username}</span><button class="copy-btn" id="copyUsernameBtn">نسخ</button></div>
+                    </div>
+                    <div style="background:var(--input-bg);padding:14px;border-radius:14px;">
+                        <div style="color:var(--text-muted);font-size:13px;">رقم المستخدم (ID)</div>
+                        <div style="display:flex;justify-content:space-between;align-items:center;"><span>${acc.userId}</span><button class="copy-btn" id="copyUserIdBtn">نسخ</button></div>
+                    </div>`;
+                document.getElementById('copyUsernameBtn').addEventListener('click', () => { navigator.clipboard?.writeText(
+                        acc.username);
+                    showToast('تم النسخ', true); });
+                document.getElementById('copyUserIdBtn').addEventListener('click', () => { navigator.clipboard?.writeText(acc
+                        .userId);
+                    showToast('تم النسخ', true); });
+                openModal(document.getElementById('personalInfoModal'));
+            }
+
+            function openLegalModalWithContent() {
+                document.getElementById('legalModalContent').innerHTML = `
+                    <p><strong>1- معلومات عامة</strong><br>تعمل المنصة كنظام تداول أصول رقمية مصمم لتوفير وصول مبسط للمستخدمين.</p>
+                    <p style="margin:14px 0;"><strong>2- التنظيم والامتثال</strong><br>تتبع الشركة إجراءات امتثال داخلية تشمل بروتوكولات إدارة المخاطر.</p>
+                    <p><strong>3- مسؤولية المستخدم</strong><br>باستخدام المنصة، يقر المستخدم بقبول جميع المخاطر المرتبطة بالتداول.</p>
+                    <p style="margin-top:14px;">للاستفسارات: legal@pocket24.com</p>`;
+                openModal(document.getElementById('legalModal'));
+            }
+
+            // ==================== VIP OFFERS ====================
+            const vipOffers = [
+                { deposit: 50, dailyProfit: 10.00, monthlyProfit: 300, hot: false },
+                { deposit: 75, dailyProfit: 15.00, monthlyProfit: 450, hot: false },
+                { deposit: 100, dailyProfit: 20.00, monthlyProfit: 600, hot: true },
+                { deposit: 150, dailyProfit: 30.00, monthlyProfit: 900, hot: false },
+                { deposit: 200, dailyProfit: 40.00, monthlyProfit: 1200, hot: false },
+                { deposit: 250, dailyProfit: 50.00, monthlyProfit: 1500, hot: false },
+                { deposit: 300, dailyProfit: 60.00, monthlyProfit: 1800, hot: false },
+                { deposit: 350, dailyProfit: 70.00, monthlyProfit: 2100, hot: false },
+                { deposit: 400, dailyProfit: 80.00, monthlyProfit: 2400, hot: false },
+                { deposit: 500, dailyProfit: 100.00, monthlyProfit: 3000, hot: false }
+            ];
+
+            function populateVipOffers() {
+                const container = document.getElementById('vipOffersContainer');
+                if (!container) return;
+                container.innerHTML = '';
+                vipOffers.forEach((offer, i) => {
+                    const card = document.createElement('div');
+                    card.className = 'vip-offer-card' + (offer.hot ? ' hot-offer' : '');
+                    const pct = ((offer.dailyProfit / offer.deposit) * 100).toFixed(0);
+                    card.innerHTML = `
+                        ${offer.hot?'<div class="hot-badge"><i class="fas fa-fire"></i> الأكثر طلباً</div>':''}
+                        <div class="vip-offer-header"><div class="vip-offer-rank">${i+1}</div><div><div class="vip-offer-name">عرض VIP ${i+1}</div><div class="vip-offer-duration"><i class="fas fa-calendar-check"></i> 30 يومًا</div></div></div>
+                        <div class="vip-offer-stats">
+                            <div class="vip-stat-box"><div class="vip-stat-label">الإيداع</div><div class="vip-stat-value">$${offer.deposit}</div></div>
+                            <div class="vip-stat-box"><div class="vip-stat-label">ربح يومي (${pct}%)</div><div class="vip-stat-value daily-profit">$${offer.dailyProfit.toFixed(2)}</div></div>
+                            <div class="vip-stat-box"><div class="vip-stat-label">ربح شهري</div><div class="vip-stat-value monthly-profit">$${offer.monthlyProfit.toLocaleString()}</div></div>
+                        </div>
+                        <button class="vip-subscribe-btn"><i class="fas fa-crown"></i> اشترك الآن</button>`;
+                    card.querySelector('.vip-subscribe-btn').addEventListener('click', () => showToast(
+                        'لا يوجد رصيد كافٍ. يرجى الإيداع أولاً.', true));
+                    container.appendChild(card);
+                });
+            }
+
+            function openVipPage() {
+                if (!isLoggedIn()) { openModal(document.getElementById('loginModal')); return; }
+                navigateTo(vipPage, 'vip');
+                populateVipOffers();
+            }
+
+            // ==================== EVENT BINDINGS ====================
+            document.getElementById('darkModeToggle').addEventListener('change', function() {
+                darkMode = this.checked;
+                localStorage.setItem('pocket24_dark_mode', darkMode);
+                applyDarkMode();
+                if (forexChartInstance && tradePage.style.display === 'flex') createForexChart(
+                currentResolution);
+            });
+
+            document.querySelectorAll('.lang-btn').forEach(btn => btn.addEventListener('click', function() {
+                setLanguage(this.getAttribute('data-lang'));
+            }));
+
+            // Signup
+            document.getElementById('signupSubmitBtn').addEventListener('click', function() {
+                if (!canCreateAccount()) { showToast('هذا الجهاز يحتوي بالفعل على حساب.', true); return; }
+                const firstName = document.getElementById('firstName').value.trim(),
+                    lastName = document.getElementById('lastName').value.trim(),
+                    username = document.getElementById('username').value.trim(),
+                    email = document.getElementById('signupEmail').value.trim(),
+                    password = document.getElementById('signupPassword').value;
+                if (!firstName || !lastName || !username || !email || !password) { showToast(
+                        'الرجاء ملء جميع الحقول.', true); return; }
+                if (!/^\S+@\S+\.\S+$/.test(email)) { showToast('صيغة البريد غير صحيحة.', true); return; }
+                if (password.length < 6) { showToast('كلمة المرور 6 أحرف على الأقل.', true); return; }
+                const acc = {
+                    firstName,
+                    lastName,
+                    username,
+                    email,
+                    password,
+                    invite: document.getElementById('inviteCode').value.trim(),
+                    createdAt: new Date().toISOString(),
+                    userId: generateUserId(),
+                    balance: 0.00,
+                    totalDeposits: 0.00,
+                    todayProfit: 0.00,
+                    availableBalance: 0.00,
+                    frozenBalance: 0.00
+                };
+                acc.referralCode = generateReferralCode();
+                acc.referralLink = `https://pocket24.com/ref/${acc.referralCode}`;
+                acc.depositAddresses = { ...FIXED_DEPOSIT_ADDRESSES };
+                saveAccount(acc);
+                saveReferralStats({ total: 0, rewards: 0, l1: 0, l2: 0, l3: 0 });
+                showToast('تم إنشاء الحساب بنجاح!', true);
+                ['firstName', 'lastName', 'username', 'signupEmail', 'signupPassword', 'inviteCode'].forEach(id =>
+                    document.getElementById(id).value = '');
+                closeModal(document.getElementById('signupModal'));
+                openModal(document.getElementById('loginModal'));
+            });
+
+            // Login
+            document.getElementById('loginSubmitBtn').addEventListener('click', function() {
+                const identifier = document.getElementById('loginIdentifier').value.trim(),
+                    password = document.getElementById('loginPassword').value,
+                    account = getSavedAccount();
+                if (!account) { showToast('لا يوجد حساب.', true);
+                    closeModal(document.getElementById('loginModal'));
+                    openModal(document.getElementById('signupModal')); return; }
+                if (!identifier || !password) { showToast('الرجاء ملء الحقول.', true); return; }
+                if ((identifier !== account.email && identifier !== account.username) || password !== account
+                    .password) { showToast('بيانات غير صحيحة.', true); return; }
+                enterMainApp();
+                document.getElementById('loginPassword').value = '';
+                closeModal(document.getElementById('loginModal'));
+                hideSplash();
+            });
+
+            // Forgot Password
+            let captchaValue = '';
+
+            function generateCaptcha() {
+                const canvas = document.getElementById('captchaCanvas');
+                if (!canvas) return;
+                const ctx = canvas.getContext('2d'),
+                    w = canvas.width,
+                    h = canvas.height;
+                const nums = Array.from({ length: 4 }, () => Math.floor(Math.random() * 10));
+                captchaValue = nums.join('');
+                ctx.fillStyle = '#ffffff';
+                ctx.fillRect(0, 0, w, h);
+                ctx.font = 'bold 22px "Tajawal"';
+                nums.forEach((n, i) => { ctx.fillStyle = `hsl(${Math.random()*60+180},70%,30%)`;
+                    ctx.fillText(n, 10 + i * 23, h / 2 + 6); });
+            }
+            document.getElementById('refreshCaptchaBtn')?.addEventListener('click', generateCaptcha);
+            document.getElementById('captchaCanvas')?.addEventListener('click', generateCaptcha);
+            document.getElementById('forgotPasswordLink')?.addEventListener('click', () => {
+                closeModal(document.getElementById('loginModal'));
+                openModal(document.getElementById('forgotPasswordModal'));
+                document.getElementById('forgotStep1').style.display = 'block';
+                document.getElementById('forgotStep2').style.display = 'none';
+                generateCaptcha();
+            });
+            document.getElementById('verifyCurrentPasswordBtn')?.addEventListener('click', function() {
+                const account = getSavedAccount();
+                if (!account || account.email !== document.getElementById('forgotEmail').value.trim()) { showToast(
+                        'بريد غير مسجل.', true); return; }
+                if (document.getElementById('currentPasswordCheck').value !== account.password) { showToast(
+                        'كلمة مرور غير صحيحة.', true); return; }
+                document.getElementById('forgotStep1').style.display = 'none';
+                document.getElementById('forgotStep2').style.display = 'block';
+                generateCaptcha();
+            });
+            document.getElementById('resetPasswordFinalBtn')?.addEventListener('click', function() {
+                const np = document.getElementById('newPasswordForgot').value,
+                    cp = document.getElementById('confirmNewPasswordForgot').value;
+                if (np.length < 6) { showToast('كلمة المرور 6 أحرف على الأقل.', true); return; }
+                if (np !== cp) { showToast('كلمتا المرور غير متطابقتين.', true); return; }
+                if (document.getElementById('captchaInput').value.trim() !== captchaValue) { showToast(
+                        'رمز تحقق خاطئ.', true);
+                    generateCaptcha(); return; }
+                const account = getSavedAccount();
+                account.password = np;
+                saveAccount(account);
+                showToast('تم تغيير كلمة المرور!', true);
+                closeModal(document.getElementById('forgotPasswordModal'));
+                openModal(document.getElementById('loginModal'));
+            });
+
+            // Navigation
+            document.querySelectorAll('#bottomNav .nav-item').forEach(item => item.addEventListener('click',
+            function() {
+                const nav = this.dataset.nav;
+                if (nav === 'home') showMainApp();
+                else if (nav === 'market') openMarketPage();
+                else if (nav === 'admin') openAdminPage();
+                else if (nav === 'wallet') openWalletPage();
+                else if (nav === 'vip') openVipPage();
+            }));
+
+            document.getElementById('switchToSignupLink')?.addEventListener('click', () => { closeModal(document.getElementById(
+                    'loginModal')); if (!canCreateAccount()) { showToast('يوجد حساب بالفعل.', true);
+                    openModal(document.getElementById('loginModal')); return; }
+                openModal(document.getElementById('signupModal')); });
+            document.getElementById('switchToLoginLink')?.addEventListener('click', () => { closeModal(document.getElementById(
+                    'signupModal'));
+                openModal(document.getElementById('loginModal')); });
+            document.getElementById('welcomeLoginBtn')?.addEventListener('click', () => openModal(document.getElementById(
+                'loginModal')));
+            document.getElementById('welcomeSignupBtn')?.addEventListener('click', () => { if (!canCreateAccount()) {
+                    showToast('يوجد حساب بالفعل.', true);
+                    openModal(document.getElementById('loginModal')); return; }
+                openModal(document.getElementById('signupModal')); });
+            document.getElementById('addFundsBtn')?.addEventListener('click', () => { currentDepositNetwork = 'trc20';
+                updateDepositModalContent();
+                openModal(document.getElementById('depositModal')); });
+            document.querySelectorAll('.close-modal').forEach(btn => btn.addEventListener('click', function() {
+                closeModal(this.closest('.modal'));
+            }));
+            document.querySelectorAll('.modal').forEach(m => m.addEventListener('click', function(e) {
+                if (e.target === m) closeModal(m);
+            }));
+
+            document.querySelectorAll('.quick-item').forEach(item => item.addEventListener('click', () => {
+                const action = item.dataset.action;
+                if (action === 'invite') { updateInviteModalContent();
+                    openModal(document.getElementById('inviteModal')); } else if (action ===
+                    'withdraw') { renderWithdrawForm('withdrawModalContent');
+                    openModal(document.getElementById('withdrawModal')); } else if (action ===
+                    'trade') openTradePage();
+                else if (action === 'deposit') { currentDepositNetwork = 'trc20';
+                    updateDepositModalContent();
+                    openModal(document.getElementById('depositModal')); }
+            }));
+            document.getElementById('startTradeCard')?.addEventListener('click', openTradePage);
+            document.getElementById('viewWalletBtn')?.addEventListener('click', openWalletPage);
+
+            document.querySelectorAll('#depositModal .network-tab').forEach(tab => tab.addEventListener('click',
+            function() {
+                currentDepositNetwork = this.dataset.network;
+                updateDepositModalContent();
+            }));
+
+            document.getElementById('copyLinkBtn')?.addEventListener('click', () => { navigator.clipboard?.writeText(
+                    document.getElementById('referralLinkInput').value);
+                showToast('تم نسخ الرابط!', true); });
+            document.getElementById('copyCodeBtn')?.addEventListener('click', () => { navigator.clipboard?.writeText(
+                    document.getElementById('referralCodeInput').value);
+                showToast('تم نسخ الكود!', true); });
+
+            ['backFromTradeBtn', 'backFromWalletBtn', 'backFromMarketBtn', 'backFromAdminBtn', 'backFromVipBtn'].forEach(
+                id => document.getElementById(id)?.addEventListener('click', showMainApp));
+
+            document.querySelectorAll('.tf-btn').forEach(btn => btn.addEventListener('click', function() {
+                setChartResolution(this.dataset.tf);
+            }));
+            document.getElementById('verifyTradePageCodeBtn')?.addEventListener('click', function() {
+                const code = document.getElementById('tradePageCodeInput').value.trim();
+                if (!code) { showToast('يرجى إدخال رمز التداول', true); return; }
+                showToast('تم التحقق من الرمز بنجاح', true);
+            });
+            document.getElementById('toggleMainBalanceEye')?.addEventListener('click', () => {
+                balanceHidden = !balanceHidden;
+                updateBalanceDisplay();
+            });
+            document.querySelectorAll('.wallet-tab').forEach(tab => tab.addEventListener('click', function() {
+                document.querySelectorAll('.wallet-tab').forEach(t => t.classList.remove('active'));
+                this.classList.add('active');
+                renderWalletTabContent();
+            }));
+
+            document.getElementById('supportLinkWelcome')?.addEventListener('click', () => openModal(document.getElementById(
+                'supportModal')));
+            document.getElementById('legalLinkWelcome')?.addEventListener('click', openLegalModalWithContent);
+            document.getElementById('supportBtnAdmin')?.addEventListener('click', () => openModal(document.getElementById(
+                'supportModal')));
+            document.getElementById('legalBtnAdmin')?.addEventListener('click', openLegalModalWithContent);
+            document.getElementById('logoutAdminBtn')?.addEventListener('click', () => { logout(); });
+            document.getElementById('personalEpisodeBtn')?.addEventListener('click', openPersonalInfoModal);
+            document.getElementById('notificationsBtn')?.addEventListener('click', () => openModal(document.getElementById(
+                'notificationsModal')));
+
+            // Pull to refresh
+            function setupPullToRefresh(scrollAreaId, ptrIndicatorId, refreshFn) {
+                const scrollArea = document.getElementById(scrollAreaId);
+                const ptrIndicator = document.getElementById(ptrIndicatorId);
+                if (!scrollArea || !ptrIndicator) return;
+                let startY = 0;
+                let pulling = false;
+                scrollArea.addEventListener('touchstart', function(e) {
+                    if (scrollArea.scrollTop <= 0) {
+                        startY = e.touches[0].clientY;
+                        pulling = true;
+                    }
+                }, { passive: true });
+                scrollArea.addEventListener('touchmove', function(e) {
+                    if (!pulling) return;
+                    const dy = e.touches[0].clientY - startY;
+                    if (dy > 40) {
+                        ptrIndicator.classList.add('visible');
+                    } else {
+                        ptrIndicator.classList.remove('visible');
+                    }
+                }, { passive: true });
+                scrollArea.addEventListener('touchend', function() {
+                    if (pulling && ptrIndicator.classList.contains('visible')) {
+                        ptrIndicator.querySelector('i').style.animation = 'ptrSpin 0.6s linear infinite';
+                        setTimeout(() => {
+                            refreshFn();
+                            ptrIndicator.classList.remove('visible');
+                            ptrIndicator.querySelector('i').style.animation = '';
+                        }, 600);
+                    }
+                    pulling = false;
+                });
+            }
+            setupPullToRefresh('homeScrollArea', 'homePtrIndicator', () => {
+                populateHomeMarketList();
+                updateBalanceDisplay();
+                showToast('تم التحديث', true);
+            });
+
+            function checkInitialState() {
+                applyLanguageToDOM();
+                applyDarkMode();
+                updateOnlineStatus();
+                updateBalanceDisplay();
+
+                const acc = getSavedAccount();
+                if (isLoggedIn() && acc) {
+                    enterMainApp();
+                    setTimeout(hideSplash, 800);
+                } else {
+                    showWelcomeScreen();
+                    setTimeout(hideSplash, 1200);
+                }
+                setInterval(updateOnlineStatus, 30000);
+            }
+            checkInitialState();
+        })();
+    </script>
+</body>
+</html>
