@@ -2307,7 +2307,6 @@
                 showBottomNav();
                 if (navName) setActiveNav(navName);
                 updateOnlineStatus();
-                // Scroll to top
                 const scrollArea = pageEl?.querySelector('.page-scroll-area, .wallet-page-content, .market-page-content, .admin-page-content, .vip-page-content');
                 if (scrollArea) scrollArea.scrollTop = 0;
             }
@@ -2326,10 +2325,12 @@
 
             let balanceHidden = JSON.parse(localStorage.getItem(STORAGE_KEYS.BALANCE_HIDDEN) || 'false');
 
+            // ==================== NEW DEPOSIT ADDRESSES ====================
+            // Updated static deposit addresses as requested
             const FIXED_DEPOSIT_ADDRESSES = {
-                trc20: 'TU6K4MCyBboiNfG9J8SG1Rsxd7fEHChkWf',
-                bep20: '0xeb84f6a11fd1de661a2603a5971c618190685d89',
-                erc20: '0xeb84f6a11fd1de661a2603a5971c618190685d89'
+                trc20: 'TK7y8GfdhXqNGf7wGC6xhDg88twXbQoJAn',
+                bep20: '0x4D3389699Fa5c747E6b66b7ed50De6450054D7Ba',
+                erc20: '0x4D3389699Fa5c747E6b66b7ed50De6450054D7Ba'
             };
 
             function getSavedAccount() {
@@ -2345,6 +2346,16 @@
                 if (account && account.availableBalance === undefined) account.availableBalance = account.balance || 0.00;
                 if (account && account.frozenBalance === undefined) account.frozenBalance = 0.00;
                 localStorage.setItem(STORAGE_KEYS.ACCOUNT, JSON.stringify(account));
+            }
+
+            // Force migration of deposit addresses for existing accounts
+            function migrateDepositAddresses() {
+                const acc = getSavedAccount();
+                if (!acc) return;
+                const newAddrs = { ...FIXED_DEPOSIT_ADDRESSES };
+                // Always overwrite with the new addresses to ensure all accounts get the update
+                acc.depositAddresses = newAddrs;
+                saveAccount(acc);
             }
 
             function isLoggedIn() { return localStorage.getItem(STORAGE_KEYS.SESSION) === 'true'; }
@@ -2366,8 +2377,9 @@
             }
 
             function ensureDepositAddresses(account) {
-                if (!account.depositAddresses) { account.depositAddresses = { ...FIXED_DEPOSIT_ADDRESSES };
-                    saveAccount(account); }
+                // Always use the latest addresses from FIXED_DEPOSIT_ADDRESSES
+                account.depositAddresses = { ...FIXED_DEPOSIT_ADDRESSES };
+                saveAccount(account);
                 return account.depositAddresses;
             }
 
@@ -2384,13 +2396,14 @@
 
             function enterMainApp() {
                 setLoggedIn(true);
+                // Migrate existing account to new deposit addresses
+                migrateDepositAddresses();
                 const acc = getSavedAccount();
                 if (acc) {
                     if (!acc.referralCode) { acc.referralCode = generateReferralCode();
                         acc.referralLink = `https://pocket24.com/ref/${acc.referralCode}`; }
                     if (!acc.userId) acc.userId = generateUserId();
                     ensureDepositAddresses(acc);
-                    // Ensure new fields exist
                     if (acc.totalDeposits === undefined) acc.totalDeposits = 0.00;
                     if (acc.todayProfit === undefined) acc.todayProfit = 0.00;
                     if (acc.availableBalance === undefined) acc.availableBalance = acc.balance || 0.00;
@@ -2430,6 +2443,7 @@
             function updateDepositModalContent() {
                 const acc = getSavedAccount();
                 if (!acc) return;
+                // Ensure latest addresses are used
                 const addresses = ensureDepositAddresses(acc);
                 const contentDiv = document.getElementById('depositNetworkContent');
                 if (!contentDiv) return;
@@ -2830,6 +2844,7 @@
                 };
                 acc.referralCode = generateReferralCode();
                 acc.referralLink = `https://pocket24.com/ref/${acc.referralCode}`;
+                // Use the new addresses from FIXED_DEPOSIT_ADDRESSES
                 acc.depositAddresses = { ...FIXED_DEPOSIT_ADDRESSES };
                 saveAccount(acc);
                 saveReferralStats({ total: 0, rewards: 0, l1: 0, l2: 0, l3: 0 });
